@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+¨* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-90 {
+    width: 90px !important;
+}
+thead input {
+    width: 100%;
+}
+
+.body-table {
+    padding: 3%;
+    background-color: #ffff;
+    border-radius: 2%;
+}
+
+.card-shadow {
+    box-shadow: 5px 8px 8px 3px #0b0b0b;
+}
