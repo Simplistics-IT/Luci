@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Luci</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body class="sb-nav-fixed px-1 p-1">
+    <header id="navbar"></header>
+
+	<div id="layoutSidenav">
+        <aside id="sidebar"></aside>
+
+		<div id="layoutSidenav_content">
+			<main>
+            <div class="conteiner p-5">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <header class="header">
+                                        <h1>Inventario</h1>
+                                    </header>
+                                    <div class="card-heder__title">
+                                        
+                                        <div class="col-md-4">
+                                            <h2 class="title">RESULTADOS</h2>
+                                        </div>
+                                        <div>
+                                            <button type="submit" name="btn_add" class="btn btn-primary" style="margin-left: 700px;">
+                                                FILTRAR<i class="bi bi__btn bi-filter-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <div id="example_wrapper" class="dataTables_wrapper no-footer">
+                                            <div class="dataTables_length" id="example_length">
+                                                <label>Mostrar   
+                                                    <select name="example_length" aria-controls="example" class="form-control">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select> Entradas
+                                                </label>
+                                            </div>
+                                            <div id="example_filter" class="dataTables_filter">
+                                                <label>Buscar:
+                                                    <input type="search" class="form-control" placeholder="" aria-controls="example">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">SKU</th>
+                                                <th scope="col">BARCODE</th>
+                                                <th scope="col">DESCRRIPCIÓN</th>
+                                                <th scope="col">ENTRADAS</th>
+                                                <th scope="col">SALIDAS</th>
+                                                <th scope="col">INVENTARIO</th>
+                                                <th scope="col">DISPONIBLE</th>
+                                                <th scope="col">PSP</th>
+                                                <th scope="col">V/D</th>
+                                                <th scope="col">COBERTURA</th>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    <td>@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry the Bird</td>
+                                                    <td>Bird</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </thead>
+                                        </table>
+                                        <section class="paginacion">
+                                            <ul>
+                                                <li><a href="#"><i class="bi bi-chevron-double-left"></i></a></li>
+                                                <li><a href="#" class="active">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li>...</li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#"><i class="bi bi-chevron-double-right"></i></a></li>
+                                            </ul>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer id="footer"></footer>
+        </div>
+    </div>
+    <!-- Scripts to include HTML modules -->
+    <script src="../assets/js/include-files.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>-->
+    <script src="../assets/js/style.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+</body>
+</html>
