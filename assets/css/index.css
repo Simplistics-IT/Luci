@@ -1,12 +1,75 @@
+/* General Styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 
-¨* {
+* {
     font-family: 'Montserrat', sans-serif;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.text-main-red {
+    color: #db3d30;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Classes to change sidebar view */
+
+.aside {
+    width: 280px;
+    transition: width 200ms ease-in 0s;
+}
+
+.aside-change {
+    width: 70px;
+}
+
+.small-logo {
+    position: relative;
+    width: 45px;
+} /* Default Class for small logo*/
+
+.small-logo-hiden {
+    position: absolute;
+    opacity: 0;
+} /* Class removed by JS to show logo*/
+
+.hide-elem {
+    position: absolute;
+    width: 0;
+    opacity: 0;
+}
+
+.hide-text {
+    overflow: hidden;
+}
+
+.padding-base {
+    padding-left: 300px;/* 90px when hidden */
+    transition: width 200ms ease-in 0s;
+}
+
+.padding-change {
+    padding-left: 90px;
+}
+
+.width-change {
+    width: 100%;/* 25% when hidden*/
+}
+
+/* End of classes to change sidebar view */
 
 .img-90 {
     width: 90px !important;
 }
+
 thead input {
     width: 100%;
 }
@@ -20,3 +83,4 @@ thead input {
 .card-shadow {
     box-shadow: 5px 8px 8px 3px #0b0b0b;
 }
+

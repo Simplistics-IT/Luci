@@ -1,0 +1,26 @@
+/* Navbar Main Styles */
+.navbar {
+    height: 70px;
+}
+
+.nav-link-red {
+    color: #db3d30;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-link-red:focus {
+    color: #b43227;
+}
+
+.nav-link-red:hover {
+    color: #b43227;
+}
+
+.btn-menu {
+    transition: 0.2s ease-in-out;
+}
+
+.btn-menu:focus {
+    box-shadow: none;
+}
