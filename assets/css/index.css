@@ -2,6 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 
+:root {
+    --bg-red-main: #db3d30;
+    --bg-white: #fff;
+}
+
 * {
     font-family: 'Montserrat', sans-serif;
 }
@@ -23,45 +28,23 @@ html {
 /* Classes to change sidebar view */
 
 .aside {
+    left: -280px;
     width: 280px;
-    transition: width 200ms ease-in 0s;
+    transition: 300ms ease-in-out;
 }
 
 .aside-change {
-    width: 70px;
-}
-
-.small-logo {
-    position: relative;
-    width: 45px;
-} /* Default Class for small logo*/
-
-.small-logo-hiden {
-    position: absolute;
-    opacity: 0;
-} /* Class removed by JS to show logo*/
-
-.hide-elem {
-    position: absolute;
-    width: 0;
-    opacity: 0;
-}
-
-.hide-text {
-    overflow: hidden;
+    left: 0px;
 }
 
 .padding-base {
-    padding-left: 300px;/* 90px when hidden */
-    transition: width 200ms ease-in 0s;
+    padding-left: 24px;
+    transition: 300ms ease-in-out;
 }
 
 .padding-change {
-    padding-left: 90px;
-}
+    padding-left: 300px;
 
-.width-change {
-    width: 100%;/* 25% when hidden*/
 }
 
 /* End of classes to change sidebar view */

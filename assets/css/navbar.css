@@ -1,6 +1,6 @@
 /* Navbar Main Styles */
 .navbar {
-    height: 70px;
+    height: 80px;
 }
 
 .nav-link-red {
@@ -24,3 +24,11 @@
 .btn-menu:focus {
     box-shadow: none;
 }
+
+.img-profile {
+    cursor: pointer;
+    border: 2px solid #db3d30;
+    border-radius: 50%;
+    width: 3.5rem;
+}
+
