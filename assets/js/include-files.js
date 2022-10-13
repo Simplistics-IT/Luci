@@ -3,7 +3,6 @@ const sidebar = document.getElementById("sidebar");
 const footer = document.getElementById("footer");
 const dirNavbar = '../components/navbar.html';
 const dirSidebar = '../components/sidebar.html';
-const dirFooter = '../components/footer.html';
 
 function includeHtml(elem, dir) {
     let xhr = new XMLHttpRequest();
@@ -18,4 +17,3 @@ function includeHtml(elem, dir) {
 
 includeHtml(navbar, dirNavbar);
 includeHtml(sidebar, dirSidebar);
-includeHtml(footer, dirFooter);

@@ -13,11 +13,28 @@
 
 html {
     position: relative;
-    min-height: 100%;
 }
 
 .text-main-red {
     color: #db3d30;
+}
+
+.text-main-red:focus {
+    box-shadow: none;
+    color: #db3d30;
+}
+
+.btn-primary {
+    background-color: #db3d30;
+    border: 1px solid #db3d30;
+}
+.btn-primary:hover {
+    background-color: #ac3125;
+    border: 1px solid #ac3125;
+}
+
+.form-control:focus {
+    box-shadow: none;
 }
 
 .main {
@@ -67,3 +84,21 @@ thead input {
     box-shadow: 5px 8px 8px 3px #0b0b0b;
 }
 
+/* Consult Styles */
+
+.form-select-short {
+    margin: 0 10px;
+    padding: 4px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 4px;
+    color: #715d5d;
+}
+
+.form-select-short:focus-visible {
+    box-shadow: none;
+    outline: none;
+}
+
+.page-link:hover {
+    color: #db3d30;
+}

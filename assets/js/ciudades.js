@@ -1,27 +1,21 @@
-var ciudades;
+const response = await fetch( `../assets/json/ciudades.json`);
+const data = await response.json();
+const inputDepartamento = document.getElementById('departamento');
+const inputCiudades = document.getElementById('ciudades');
 
-const res = await fetch('../Ciudades.json')
+data.forEach( departamento => {
+    let opt = document.createElement('option');
+    opt.value = departamento.id;
+    opt.textContent += departamento.departamento;
+    inputDepartamento.appendChild(opt);
+});
 
-ciudades = await res.json()
-
-
-
-var depart = document.querySelector('[name="departamentos"]')
-var ciud   = document.querySelector('[name="ciudades"]')
-
-
-ciudades.forEach(departamento => {
-    let opt = document.createElement('option')
-    opt.value = departamento.id
-    opt.textContent += departamento.departamento
-    depart.appendChild(opt)
-})
-
-depart.addEventListener("change", function(e) {
-    ciud.innerHTML = ''
-    ciudades[e.target.value].ciudades.forEach(ciudad => {
-        let opt = document.createElement('option')
-        opt.value = ciudad
-        opt.textContent += ciudad
-        ciud.append(opt)
-    })})
+inputDepartamento.addEventListener( "change", function(e) {
+    inputCiudades.innerHTML = '';
+    data[e.target.value].ciudades.forEach( ciudad => {
+        let opt = document.createElement('option');
+        opt.value = ciudad;
+        opt.textContent += ciudad;
+        inputCiudades.append(opt);
+    });
+});

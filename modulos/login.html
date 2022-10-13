@@ -4,15 +4,26 @@
         <title>Luci</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Boostrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Datatable CSS -->
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        
+        <!-- Fonts -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        
+        <!-- Personalize Styles -->
         <link rel="stylesheet" href="../assets/css/login.css">
         <link rel="stylesheet" href="../assets/css/index.css">
     </head>
     <body>
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         <main class="d-flex justify-content-center align-items-center text-center h-100">
             <form class="form-signin" id="form-signin">
                 <div class="text-center me-2">
@@ -20,29 +31,34 @@
                     <p class="fs-6 fw-bold mb-3 fw-normal">INICIE SESIÓN EN SU CUENTA</p>
                 </div>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="lolito@ejemplo.com" required>
-                    <label for="floatingInput">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="input-email" placeholder="lolito@ejemplo.com" required>
+                    <label for="input-email">Correo Electrónico</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="******" required>
-                    <label for="floatingPassword">Contraseña</label>
+                    <input type="password" class="form-control" id="input-password" placeholder="******" required>
+                    <label for="input-password">Contraseña</label>
                 </div>
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> <span>Recuérdame</span>
                     </label>
                 </div>
-                <button class="w-100 btn btn-lg btn-primary" id="btn-submit" type="submit">Acceder</button>
+                <button class="w-100 btn btn-lg btn-primary" id="btn-submit" type="button">Acceder</button>
                 <h6 class="fs-6 mt-5 mb-3 text-main-red">LUCI &copy; 2022</h6>
-                </form>
+            </form>
         </main>
+        <!-- Alertify Script -->
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
         <!-- Scripts Required by bootstrap -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <!--<script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>-->
         <script src="../assets/js/style.js"></script>
+        <script src="../assets/js/login.js"></script>
     </body>
 </html>

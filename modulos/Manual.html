@@ -1,168 +1,191 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Luci</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
-</head>
-<body class="sb-nav-fixed px-1 p-1">
-    <header id="navbar"></header>
-
-	<div id="layoutSidenav">
-        <aside id="sidebar"></aside>
-
-		<div id="layoutSidenav_content">
-			<main>
-                <div class="conteiner p-5">
-                    <header class="header">
-                        <h1>Ingreso Manual</h1>
-                    </header>
-                    <div>
-                        <h2 class="title">INFORMACIÓN CLIENTE</h2>
+    <head>
+        <title>Luci</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../assets/js/verify-session.js"></script>
+        <!-- Boostrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Datatable CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        
+        <!-- Personalize Styles -->
+        <link rel="stylesheet" href="../assets/css/index.css">
+        <link rel="stylesheet" href="../assets/css/navbar.css">
+        <link rel="stylesheet" href="../assets/css/sidebars.css">
+        <link rel="stylesheet" href="../assets/css/footer.css">
+    </head>
+<body>
+    <aside class="aside fixed-top" id="sidebar"></aside>
+    <header class="header" id="navbar"></header>
+    <main class="main padding-base">
+        <section class="container-fluid px-5">
+            <header class="header py-4">
+                <h2>Ingreso Manual</h2>
+            </header>
+            <form>
+                <fieldset class="mb-3">
+                    <legend>
+                        <p>Información del Cliente</p>
+                    </legend>
+                    <div class="row mb-3">
+                        <div class="form-floating col-2">
+                            <input type="text" class="form-control" id="input-id-cliente" name="input-id-cliente" placeholder="ID del cliente" required>
+                            <label class="ms-3" for="input-id-cliente">ID cliente <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="form-floating col-2">
+                            <input type="text" class="form-control" id="input-numero-orden" name="input-id-cliente" placeholder="Número de orden" required>
+                            <label class="ms-3" for="input-numero-orden">No. Orden <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="form-floating col-4">
+                            <input type="text" class="form-control" id="input-nombre-cliente" name="input-nombre-cliente" placeholder="Nombre del cliente" required>
+                            <label class="ms-3" for="input-nombre-cliente">Nombre del cliente <span class="text-danger">*</span></label>
+                        </div>
+                        <div class="form-floating col-4">
+                            <input type="text" class="form-control" id="input-telefono" name="input-telefono" placeholder="ID del Cliente" required>
+                            <label class="ms-3" sfor="input-telefono">Teléfono <span class="text-danger">*</span></label>
+                        </div>
                     </div>
-                    <form class="g-3 mt-2 row">
-                        <div class="col-4">
-                            <label for="id" class="form-label">ID CLIENTE*</label>
-                            <input type="number" class="form-control" id="id" name="nombre" placeholder="ID del Cliente" required>
+                    <div class="row mb-3">
+                        <div class="form-floating col-4">
+                            <input type="email" class="form-control" id="input-email" name="input-email" placeholder="Correo electrónico">
+                            <label class="ms-3" for="input-email">Correo electrónico</label>
                         </div>
-
-                        <div class="col-4">
-                            <label for="nombre" class="form-label">NOMBRE CLIENTE*</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo" required>
-                        </div>
-                        <div class="col-4">
-                            <label for="numero" class="form-label">NÚMERO ORDEN*</label>
-                            <input type="number" class="form-control" id="numero" name="numero" placeholder="Nombre Completo" required>
-                        </div>
-                        <div class="col-4">
-                            <label for="telefono" class="form-label">TÉLEFONO*</label>
-                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Nombre Completo" required>
-                        </div>
-                        <div class="col-4">
-                            <label for="departamento" class="form-label">DEPARTAMENTO*</label>
-                            <select type="text" class="form-control" name="departamentos" required>
-                                <option value="departamentos">SELECCIONE UN DEPARTAMENTO</option>
+                        <div class="form-floating col-4">
+                            <select type="text" class="form-control" name="departamentos" id="departamento" required>
+                                <option value="departamentos">Seleccione un departamento</option>
                             </select>
+                            <label class="ms-3" for="departamento">Departamento <span class="text-danger">*</span></label>
                         </div>
-                        <div class="col-4">
-                            <label for="ciudad" class="form-label">CIUDAD*</label>
-                            <select type="text" class="form-control" name="ciudades" required>
-                                <option value="ciudad">SELECCIONE UNA CIUDAD</option>
+                        <div class="form-floating col-4">
+                            <select type="text" class="form-control" name="ciudades" id="ciudades" required>
+                                <option value="ciudad">Seleccione una ciudad</option>
                             </select>
+                            <label class="ms-3" for="ciudades">Ciudad <span class="text-danger">*</span></label>
                         </div>
-                        <div class="col-8">
-                            <label for="nombre" class="form-label">CORREO ELECTRONICO</label>
-                            <input type="email" class="form-control" id="nombre" name="nombre" placeholder="CORREO ELECTRONICO">
-                        </div>
-                        <div class="col-4"></div>
-                        <div class="col-sm-3 mt-2">
-                            <label for="direccion" class="form-label">DIRECCION*</label>
-                            <select type="text" class="form-control" name="via" required>
-                                <option>Ingrese la Opción</option>
-                                <option value="autopista">Autopista</option>
-                                <option value="avenida">Avenida</option>
-                                <option value="avenida calle">Avenida Calle</option>
-                                <option value="avenida carrera">Avenida Carrera</option>
-                                <option value="calle">Calle</option>
-                                <option value="carrera">Carrera</option>
-                                <option value="circular">Circular</option>
-                                <option value="diagonal">Diagonal</option>
-                                <option value="transversal">Transversal</option>
-                                <option value="zona">Zona</option>
-                            </select>
-                        </div>
-                        
-                        <div class="col-sm-2" style='margin-top: 40px;'>
-                            <input type="text" class="form-control" id="numeroCalle" name="numero" placeholder="Numero" required>
-                        </div>
-
-                        <div class="col-sm-1" style='margin-top: 40px;'>
-                            <h3 class="d-flex justify-content-center">#</h3>
-                        </div>
-
-                        <div class="col-sm-2" style='margin-top: 40px;'>
-                            <input type="text" class="form-control" name="numero" placeholder="Numero" required>
-                        </div>
-                            
-                        <div class="col-sm-1" style='margin-top: 40px;'>
-                            <h3 class="d-flex justify-content-center">-</h3>
-                        </div>
-
-                        <div class="col-sm-2" style='margin-top: 40px;'>
-                            <input type="text" class="form-control" name="numero" placeholder="Numero" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <select type="text" class="form-control" name="final" required>
-                                <option>Ingrese la Opción</option>
-                                <option value="manzana">Manzana</option>
-                                <option value="zona">Zona</option>
-                                <option value="bloque">Bloque</option>
-                                <option value="habitacion">Habitación</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-12">
-                            <label for="ciudad" class="form-label">NOTAS DE DIRECCIÓN</label>
-                            <textarea class="form-control" name="notas_direccion" cols="3" rows="7"></textarea>
+                            <div class="input-group">
+                                <label for="direccion" class="input-group-text">Dirección<span class="text-danger">*</span></label>
+                                <select type="text" class="form-control" name="via" required>
+                                    <option>Tipo de vía</option>
+                                    <option value="autopista">Autopista</option>
+                                    <option value="avenida">Avenida</option>
+                                    <option value="avenida calle">Avenida Calle</option>
+                                    <option value="avenida carrera">Avenida Carrera</option>
+                                    <option value="calle">Calle</option>
+                                    <option value="carrera">Carrera</option>
+                                    <option value="circular">Circular</option>
+                                    <option value="diagonal">Diagonal</option>
+                                    <option value="transversal">Transversal</option>
+                                    <option value="zona">Zona</option>
+                                </select>
+                                <input type="text" class="form-control" id="numeroCalle" name="numero" placeholder="número" required>
+                                <span class="input-group-text">#</span>
+                                <input type="text" class="form-control" name="numero" placeholder="número" required>
+                                <span class="input-group-text">-</span>
+                                <input type="text" class="form-control" name="numero" placeholder="número" required>
+                                <select type="text" class="form-control" name="final" required>
+                                    <option>Tipo de residencia</option>
+                                    <option value="manzana">Manzana</option>
+                                    <option value="zona">Zona</option>
+                                    <option value="bloque">Bloque</option>
+                                    <option value="habitacion">Habitación</option>
+                                    <option value="habitacion">Apartamento</option>
+                                    <option value="habitacion">Interior</option>
+                                </select>
+                                <input type="text" class="form-control" name="numero" placeholder="número" required>
+                            </div>
                         </div>
-                        <h2>PRODUCTOS</h2>
-                        <div class="col-5">
-                            <label for="sku" class="form-label">SKU / DESCRIPCION*</label>
-                            <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU" required>
-                        </div> 
-                        <div class="col-4">
-                            <label for="ctd" class="form-label">CTD*</label>
-                            <input type="number" class="form-control" id="ctd" name="ctd" placeholder="CTD" min="0" required>
-                        </div>    
-                        <div class="col-3">
-                            <label for="precio" class="form-label">PRECIO (UNITARIO)*</label>
-                            <input type="number" class="form-control" id="ciudad" name="precio" placeholder="PRECIO" required>
-                        </div>   
-                        <h2>DETALLES DE ENVIÓ</h2>
-                        <div class="mb-3 col-md-4">
-                            <label for="opcion" class="form-label">OPCION DE ENVIÓ*</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-floating col-12">
+                            <textarea class="form-control" id="notas-direccion" name="notas-direccion" cols="12" rows="20"></textarea>
+                            <label for="notas-direccion" class="ms-3">Notas de dirección</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend>
+                        <p>Productos</p>
+                    </legend>
+                    <div id="lista-productos">
+                        <div class="row d-flex align-items-center" id="producto-1">
+                            <div class="form-floating col-2">
+                                <input type="text" class="form-control" id="input-sku" name="input-sku" placeholder="SKU" required>
+                                <label for="input-sku" class="ms-3">SKU / Descripción <span class="text-danger">*</span></label>
+                            </div> 
+                            <div class="form-floating col-4">
+                                <input type="number" class="form-control" id="input-ctd" name="input-ctd" placeholder="CTD" min="0" required>
+                                <label for="input-ctd" class="ms-3">CTD <span class="text-danger">*</span></label>
+                            </div>    
+                            <div class="form-floating col-4">
+                                <input type="number" class="form-control" id="input-precio" name="input-precio" placeholder="Precio" required>
+                                <label for="input-precio" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col-2">
+                                <button type="button" id="btn-eliminar-producto" class="btn btn-outline-danger btn-lg">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn-agregar-producto" class="btn btn-lg btn-success mt-3">
+                        <span>Agregar Producto</span>
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend>Detalles del envío</legend>
+                    <div class="row">
+                        <div class="form-floating col-6">
                             <select type="text" class="form-control" maxlength="15" name="opcion_envio" required>
-                                <option value="">SELECCIONE UNA OPCION DE ENVIÓ</option>
-                                <option>DOMICILIOS SIMPLISTICS URBANO</option> 
-                                <option>DOMICILIOS SIMPLISTICS NACIONAL</option>
-                                <option>RECOGEN EN BODEGA</option> 
+                                <option value="">Seleccione una opción de envío</option>
+                                <option value="1">Domicilios Simplistics Urbano</option> 
+                                <option value="2">Domicilios Simplistics Nacional</option>
+                                <option value="3">Recoger en Bodega</option> 
                             </select>
+                            <label for="opcion" class="ms-3">Opción de envío <span class="text-danger">*</span></label>
                         </div>
-                        <div class="mb-3 col-md-4"> 
-                            <label for="recaudo" class="form-label">REQUIERE RECAUDO*</label>
+                        <div class="form-floating col-6">
                             <select type="text" class="form-control" maxlength="15" name="recaudo" required>
-                                <option value="">INGRESE UNA OPCION</option>
-                                <option>NO</option>
-                                <option>SI</option>
+                                <option value="">Seleccione una opción</option>
+                                <option value="no">No</option>
+                                <option value="si">Sí</option>
                             </select>
+                            <label for="recaudo" class="ms-3">Requiere recaudo <span class="text-danger">*</span></label>
                         </div>
-                        <div>
-                            <button type="submit" name="btn_add" class="btn btn-primary">CONTINUAR<i class="bi bi__btn bi-arrow-right-circle"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </main>
-            <footer id="footer"></footer>
-        </div>
-    </div>
+                    </div>
+                </fieldset>
+                <button type="submit" name="btn-agregar-pedido" class="btn btn-primary btn-lg">
+                    <span>Ingresar</span>
+                    <i class="bi bi-arrow-right-circle"></i>
+                </button>
+            </form>
+        </section>
+    </main>
     <!-- Scripts to include HTML modules -->
     <script src="../assets/js/include-files.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <!-- Scripts Required by bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--<script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/style.js"></script>
-    <script src="../assets/js/sidebar.js"></script>
     <script type="module" src="../assets/js/ciudades.js"></script>
+    <script src="../assets/js/ingreso-manual.js"></script>
 </body>
 </html>

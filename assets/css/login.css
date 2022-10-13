@@ -48,3 +48,9 @@ html, body {
     background-color: #b33327;
 }
 
+.btn-primary:focus {
+  border: #db3d30;
+  background-color: #db3d30;
+  box-shadow: none;
+}
+
