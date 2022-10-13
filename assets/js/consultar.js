@@ -22,7 +22,9 @@ function renderTable(data) {
     consultTable.appendChild(tbody);
     data.items.forEach(Element => {
         let row = document.createElement('tr');
+        row.setAttribute('id', Element.OrderId);
         tbody.appendChild(row);
+        row.addEventListener('click', renderModal);
 
         //Data
         let OrderId             = document.createElement('td');
@@ -91,6 +93,13 @@ function previousPage() {
 function searchFilter() {
     currentPage = 1;
     url = `${url}&filter=${consultInputSearch.value}`;
+    getData();
+}
+
+function renderModal (e) {
+    const idElement = e.currentTarget.id;
+    currentPage = 1;
+    url = `${url}&filter=${idElement}`;
     getData();
 }
 
