@@ -4,7 +4,7 @@ const inputPassword = document.getElementById("input-password");
 
 async function login() {
     alertify.set('notifier','position', 'top-center');
-    const url= "https://ce98-186-97-138-162.ngrok.io/login";
+    const url= "https://luci-data-api-oun4264ida-uc.a.run.app/login";
     const formData = new FormData();
     formData.append("username", inputEmail.value);
     formData.append("password", inputPassword.value);

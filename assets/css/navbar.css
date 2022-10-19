@@ -1,6 +1,6 @@
 /* Navbar Main Styles */
 .navbar {
-    height: 80px;
+    height: 60px;
 }
 
 .nav-link-red {
@@ -29,6 +29,10 @@
     cursor: pointer;
     border: 2px solid #db3d30;
     border-radius: 50%;
-    width: 3.5rem;
+    width: 3rem;
+}
+
+.btn-logout:focus {
+    box-shadow: none;
 }
 

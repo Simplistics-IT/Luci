@@ -12,8 +12,16 @@
 }
 
 html {
-    position: relative;
-    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+p {
+    margin: 0;
 }
 
 .text-main-red {
@@ -65,14 +73,25 @@ html {
 
 }
 
-/* End of classes to change sidebar view */
+/* Estilos para el modal */
 
-.img-90 {
-    width: 90px !important;
+.modal-rounded {
+    border-radius: 16px;
 }
 
-thead input {
-    width: 100%;
+.card-body-background {
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.placeholder {
+    width: 200px;
+    height: .8rem;
+}
+
+/* Estilo tabla consulta */
+
+.border-bottom-red {
+    border-bottom: #db3d30;
 }
 
 .body-table {
@@ -103,3 +122,6 @@ thead input {
 .page-link:hover {
     color: #db3d30;
 }
+
+/* Estilos de la tabla de consulta de pedido */
+

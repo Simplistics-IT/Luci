@@ -1,5 +1,5 @@
 /* Variables para conexión */
-const URL = 'https://ce98-186-97-138-162.ngrok.io/';
+const URL = 'https://luci-data-api-oun4264ida-uc.a.run.app/';
 const incrementId = "currentIncrement"
 const portafolioId = "getPortfolio";
 const APIKEY = localStorage.getItem('token');
@@ -57,14 +57,15 @@ function eliminarProducto(e) {
 function llenarConsecutivo(data) {
     if (data) {
         consecutivo.value = data;
+        consecutivo.classList('disabled');
     }
 }
 
 function llenarPortafolio(data) {
     data.forEach( item => {
         portafolioList.push({
-            id: item.SP_SKU,
-            item: item.SP_DESCRIPCION
+            id: item.EAN,
+            item: item.Description
         });
     });
 }
