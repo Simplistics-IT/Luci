@@ -1,8 +1,7 @@
 const navbar = document.getElementById("navbar");
 const sidebar = document.getElementById("sidebar");
-const footer = document.getElementById("footer");
-const dirNavbar = '../components/navbar.html';
-const dirSidebar = '../components/sidebar.html';
+const dirNavbar = '../../componentes/navbar.html';
+const dirSidebar = '../../componentes/sidebar.html';
 
 function includeHtml(elem, dir) {
     let xhr = new XMLHttpRequest();

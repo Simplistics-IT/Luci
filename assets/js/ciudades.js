@@ -1,4 +1,4 @@
-const response = await fetch( `../assets/json/ciudades.json`);
+const response = await fetch( `../../assets/json/ciudades.json`);
 const data = await response.json();
 const inputDepartamento = document.getElementById('departamento');
 const inputCiudades = document.getElementById('ciudades');

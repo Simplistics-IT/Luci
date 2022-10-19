@@ -20,7 +20,7 @@ async function login() {
         localStorage.setItem('token', data.Token);
         localStorage.setItem('name', data.Name);
         localStorage.setItem('email', data.Email);
-        location.href = "../../modulos/index.html";
+        location.href = "index.html";
     } else {
         throw Error("Daniel es gei");
     }

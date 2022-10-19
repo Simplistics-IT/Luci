@@ -64,8 +64,8 @@ function llenarConsecutivo(data) {
 function llenarPortafolio(data) {
     data.forEach( item => {
         portafolioList.push({
-            id: item.EAN,
-            item: item.Description
+            id: item.SP_SKU,
+            item: item.SP_DESCRIPCION
         });
     });
 }
@@ -73,7 +73,7 @@ function llenarPortafolio(data) {
 function buscarProducto() {
     portafolioList.forEach( producto => {
         let productoOpcion = document.createElement('option');
-        productoOpcion.value = producto.item;
+        productoOpcion.value = `${producto.id} - ${producto.item}`;
         portafolioOpciones.appendChild(productoOpcion);
     });
 }
@@ -90,6 +90,8 @@ async function getCurrentIncrement() {
     let portafolioData = await portafolioResponse.json();
     let incrementData = await incrementResponse.json();
     if (incrementResponse.status === 200 && portafolioResponse.status === 200) {
+        console.log(portafolioData);
+        console.log(incrementData);
         llenarPortafolio(portafolioData);
         llenarConsecutivo(incrementData);
     }
