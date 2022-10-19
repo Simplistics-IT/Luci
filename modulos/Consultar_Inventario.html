@@ -38,7 +38,7 @@
                     <div class="card">
                         <div class="card-header">
                             <header class="header">
-                                <h1>Generacion de Guías</h1>
+                                <h1>Inventario</h1>
                             </header>
                             <div class="card-heder__title">
                                 
@@ -46,30 +46,58 @@
                                     <h2 class="title">RESULTADOS</h2>
                                 </div>
                                 <div>
-                                    <button type="submit" name="btn_add" class="btn btn-primary" style="margin-left: 600px;">
-                                        GENERAR GUIAS<i class="bi bi__btn bi-box-seam"></i>
+                                    <button type="submit" name="btn_add" class="btn btn-primary" style="margin-left: 700px;">
+                                        FILTRAR<i class="bi bi__btn bi-filter-circle"></i>
                                     </button>
                                 </div>
-    
-                            </div>                            
-                        </div>  
+                            </div>
+                        </div>
                         
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table table-striped">
+                                <div id="example_wrapper" class="dataTables_wrapper no-footer">
+                                    <div class="dataTables_length" id="example_length">
+                                        <label>Mostrar   
+                                            <select name="example_length" aria-controls="example" class="form-control">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select> Entradas
+                                        </label>
+                                    </div>
+                                    <div id="example_filter" class="dataTables_filter">
+                                        <label>Buscar:
+                                            <input type="search" class="form-control" placeholder="" aria-controls="example">
+                                        </label>
+                                    </div>
+                                </div>
+                                <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">E-COMMERCE</th>
-                                        <th scope="col">GUIAS GENERADAS</th>
-                                        <th scope="col">FECHA</th>
-                                        <th scope="col">ACCIONES</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">SKU</th>
+                                        <th scope="col">BARCODE</th>
+                                        <th scope="col">DESCRRIPCIÓN</th>
+                                        <th scope="col">ENTRADAS</th>
+                                        <th scope="col">SALIDAS</th>
+                                        <th scope="col">INVENTARIO</th>
+                                        <th scope="col">DISPONIBLE</th>
+                                        <th scope="col">PSP</th>
+                                        <th scope="col">V/D</th>
+                                        <th scope="col">COBERTURA</th>
                                         </tr>
                                         <tbody>
                                             <tr>
                                             <th scope="row">1</th>
                                             <td>Mark</td>
                                             <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
                                             <td>@mdo</td>
                                             <td>@mdo</td>
                                             </tr>
@@ -79,6 +107,12 @@
                                             <td>Thornton</td>
                                             <td>@fat</td>
                                             <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
                                             </tr>
                                             <tr>
                                             <th scope="row">3</th>
@@ -86,10 +120,10 @@
                                             <td>Bird</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
                                             </tr>
@@ -98,10 +132,10 @@
                                             <td>Bird</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
                                             </tr>
@@ -110,16 +144,58 @@
                                             <td>Bird</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
                                             </tr>
                                             <th scope="row">3</th>
                                             <td>Larry the Bird</td>
                                             <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            </tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry the Bird</td>
+                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            </tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry the Bird</td>
+                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            </tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry the Bird</td>
+                                            <td>Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
                                             <td>@twitter</td>
                                             <td>@twitter</td>
                                             </tr>
@@ -128,9 +204,9 @@
                                 </table>
                             </div>
                         </div>
-                    </div>                            
-                </div>                            
-            </div>                            
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Scripts to include HTML modules -->
