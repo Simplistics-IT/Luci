@@ -8,7 +8,7 @@
         <meta http-equiv='expires' content='0'>
         <meta http-equiv='pragma' content='no-cache'>
         <script src="../../assets/js/verify-session.js"></script>
-        <script src="../../assets/js/logout.js" defer></script>
+        <!--<script src="../../assets/js/logout.js" defer></script>-->
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         
@@ -36,86 +36,86 @@
             <header class="header py-3 border-bottom ">
                 <h2>Ingreso Manual</h2>
             </header>
-            <form class="pt-3">
+            <form id="form-ingreso-manual" class="pt-3">
                 <fieldset class="mb-3">
                     <legend>
                         <p>Información del Cliente</p>
                     </legend>
                     <div class="row mb-3">
                         <div class="form-floating col-2">
-                            <input type="text" class="form-control" id="input-id-cliente" name="input-id-cliente" placeholder="ID del cliente" required>
-                            <label class="ms-3" for="input-id-cliente">ID cliente <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control input-ingreso-manual" name="ClientID" placeholder="ID del cliente" required>
+                            <label class="ms-3" for="ClientID">ID cliente <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-2">
-                            <input type="text" class="form-control" id="input-numero-orden" name="input-id-cliente" placeholder="Número de orden" required>
-                            <label class="ms-3" for="input-numero-orden">No. Orden <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control input-ingreso-manual" name="OrderNumber" placeholder="Número de orden" required>
+                            <label class="ms-3" for="OrderNumber">No. Orden <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-4">
-                            <input type="text" class="form-control" id="input-nombre-cliente" name="input-nombre-cliente" placeholder="Nombre del cliente" required>
-                            <label class="ms-3" for="input-nombre-cliente">Nombre del cliente <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control input-ingreso-manual" name="ClientName" placeholder="Nombre del cliente" required>
+                            <label class="ms-3" for="ClientName">Nombre del cliente <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-4">
-                            <input type="text" class="form-control" id="input-telefono" name="input-telefono" placeholder="ID del Cliente" required>
-                            <label class="ms-3" sfor="input-telefono">Teléfono <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control input-ingreso-manual" name="PhoneNumber" placeholder="ID del Cliente" required>
+                            <label class="ms-3" sfor="PhoneNumber">Teléfono <span class="text-danger">*</span></label>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="form-floating col-4">
-                            <input type="email" class="form-control" id="input-email" name="input-email" placeholder="Correo electrónico">
-                            <label class="ms-3" for="input-email">Correo electrónico</label>
+                            <input type="email" class="form-control input-ingreso-manual" name="Email" placeholder="Correo electrónico">
+                            <label class="ms-3" for="Email">Correo electrónico</label>
                         </div>
                         <div class="form-floating col-4">
-                            <select type="text" class="form-control" name="departamentos" id="departamento" required>
-                                <option value="departamentos">Seleccione un departamento</option>
+                            <select type="text" class="form-control input-ingreso-manual" id="Department" name="Department" required>
+                                <option value="">Seleccione un departamento</option>
                             </select>
-                            <label class="ms-3" for="departamento">Departamento <span class="text-danger">*</span></label>
+                            <label class="ms-3" for="Department">Departamento <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-4">
-                            <select type="text" class="form-control" name="ciudades" id="ciudades" required>
-                                <option value="ciudad">Seleccione una ciudad</option>
+                            <select type="text" class="form-control input-ingreso-manual" id="City" name="City" required>
+                                <option value="">Seleccione una ciudad</option>
                             </select>
-                            <label class="ms-3" for="ciudades">Ciudad <span class="text-danger">*</span></label>
+                            <label class="ms-3" for="City">Ciudad <span class="text-danger">*</span></label>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="input-group">
                                 <label for="direccion" class="input-group-text">Dirección<span class="text-danger">*</span></label>
-                                <select type="text" class="form-control" name="via" required>
-                                    <option>Tipo de vía</option>
-                                    <option value="autopista">Autopista</option>
-                                    <option value="avenida">Avenida</option>
-                                    <option value="avenida calle">Avenida Calle</option>
-                                    <option value="avenida carrera">Avenida Carrera</option>
-                                    <option value="calle">Calle</option>
-                                    <option value="carrera">Carrera</option>
+                                <select type="text" class="form-control direccion" name="via" required>
+                                    <option value="">Tipo de vía</option>
+                                    <option value="cra">Carrera</option>
+                                    <option value="cl">Calle</option>
+                                    <option value="av">Avenida</option>
                                     <option value="circular">Circular</option>
                                     <option value="diagonal">Diagonal</option>
                                     <option value="transversal">Transversal</option>
+                                    <option value="autopista">Autopista</option>
+                                    <option value="avenida calle">Avenida Calle</option>
+                                    <option value="avenida carrera">Avenida Carrera</option>
                                     <option value="zona">Zona</option>
                                 </select>
-                                <input type="text" class="form-control" id="numeroCalle" name="numero" placeholder="número" required>
+                                <input type="text" class="form-control direccion" id="numeroCalle" name="numero" placeholder="número" required>
                                 <span class="input-group-text">#</span>
-                                <input type="text" class="form-control" name="numero" placeholder="número" required>
+                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
                                 <span class="input-group-text">-</span>
-                                <input type="text" class="form-control" name="numero" placeholder="número" required>
-                                <select type="text" class="form-control" name="final" required>
-                                    <option>Tipo de residencia</option>
+                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
+                                <select type="text" class="form-control direccion" name="final" required>
+                                    <option value="">Tipo de residencia</option>
+                                    <option value="apto">Apartamento</option>
+                                    <option value="int">Interior</option>
                                     <option value="manzana">Manzana</option>
                                     <option value="zona">Zona</option>
                                     <option value="bloque">Bloque</option>
                                     <option value="habitacion">Habitación</option>
-                                    <option value="habitacion">Apartamento</option>
-                                    <option value="habitacion">Interior</option>
                                 </select>
-                                <input type="text" class="form-control" name="numero" placeholder="número" required>
+                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-floating col-12">
-                            <textarea class="form-control" id="notas-direccion" name="notas-direccion" cols="12" rows="20"></textarea>
-                            <label for="notas-direccion" class="ms-3">Notas de dirección</label>
+                            <textarea class="form-control input-ingreso-manual" id="notas-direccion" name="Address_Notes" cols="12" rows="20"></textarea>
+                            <label for="Address_Notes" class="ms-3">Notas de dirección</label>
                         </div>
                     </div>
                 </fieldset>
@@ -126,18 +126,18 @@
                     <div id="lista-productos">
                         <div class="row d-flex align-items-center mb-2" id="producto-1">
                             <div class="form-floating col-3">
-                                <input class="form-control" list="portafolio-opciones" id="input-nombre-producto" name="input-nombre-producto" placeholder="Nombre de producto" autocomplete="off" required>
+                                <input class="form-control producto" list="portafolio-opciones" id="SKU" name="SKU" placeholder="Nombre de producto" autocomplete="off" required>
                                 <datalist id="portafolio-opciones">
                                 </datalist>
-                                <label for="input-nombre-producto" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
+                                <label for="SKU" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
                             </div> 
                             <div class="form-floating col-4">
-                                <input type="number" class="form-control" id="input-cantidad" name="input-cantidad" placeholder="Cantidad" min="0" required>
-                                <label for="input-cantidad" class="ms-3">Cantidad <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control producto" id="Quantity" name="Quantity" placeholder="Cantidad" min="0" required>
+                                <label for="Quantity" class="ms-3">Cantidad <span class="text-danger">*</span></label>
                             </div>    
                             <div class="form-floating col-4">
-                                <input type="number" class="form-control" id="input-precio" name="input-precio" placeholder="Precio" required>
-                                <label for="input-precio" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control producto" id="UnitPrice" name="UnitPrice" placeholder="Precio" required>
+                                <label for="UnitPrice" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
                             </div>
                             <div class="col-1">
                                 <button type="button" class="btn btn-outline-danger btn-lg disabled">
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <button type="submit" name="btn-agregar-pedido" class="btn btn-primary btn-lg">
+                <button type="button" name="btn-agregar-pedido" class="btn btn-primary btn-lg" id="btn-agregar-pedido">
                     <span>Ingresar</span>
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>

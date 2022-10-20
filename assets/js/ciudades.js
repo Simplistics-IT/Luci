@@ -1,7 +1,7 @@
 const response = await fetch( `../../assets/json/ciudades.json`);
 const data = await response.json();
-const inputDepartamento = document.getElementById('departamento');
-const inputCiudades = document.getElementById('ciudades');
+const inputDepartamento = document.getElementById('Department');
+const inputCiudades = document.getElementById('City');
 
 data.forEach( departamento => {
     let opt = document.createElement('option');

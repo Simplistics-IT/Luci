@@ -2,6 +2,7 @@
 const URL = 'https://luci-data-api-oun4264ida-uc.a.run.app/';
 const incrementId = "currentIncrement"
 const portafolioId = "getPortfolio";
+const createManualOrder = 'createManualOrder';
 const APIKEY = localStorage.getItem('token');
 let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + APIKEY);
@@ -17,24 +18,61 @@ const inputPrecio = document.getElementById('input-precio');
 const btnEliminarProducto = document.querySelector('.btn-eliminar-producto');
 const btnAgregarProducto = document.getElementById('btn-agregar-producto');
 let portafolioList = [];
+let dataToJson = {};
 
+/* Variables para enviar la info */
+const btnSendManualOrder = document.getElementById('btn-agregar-pedido');
+const inputsIngresoManual = document.querySelectorAll('.input-ingreso-manual');
+const inputDireccion = document.querySelectorAll('.direccion');
+const inputProductos = document.getElementsByClassName('producto');
 
+function sendManualOrder() {
+    let direccion = [];
+    let productosToJson = [];
+    let obj = {};
+    inputDireccion.forEach( elem => {
+        if (elem.value != '')
+            direccion.push( elem.value );
+        else
+            console.warn('No dejes campos vacíos');
+    });
+    inputsIngresoManual.forEach( input => {
+        if (input.value != '' && input.name != '')
+            dataToJson[input.name] = input.value;
+        else
+            console.warn('No dejes campos vacíos');
+    });
+
+    for (const producto of inputProductos) {
+        if (producto.name === 'UnitPrice' && producto.value != undefined) {
+            obj[producto.name] = producto.value;
+            productosToJson.push(obj);
+            obj = {};
+        } else if (producto.value != undefined) {
+            obj[producto.name] = producto.value;
+        }
+    }
+    dataToJson['Address'] = direccion.join(' ');
+    dataToJson['Products'] = productosToJson;
+
+    console.log(dataToJson);
+}
 
 function agregarProducto() {
     const content = `
         <div class="form-floating col-3">
-            <input class="form-control" list="portafolio-opciones" id="input-nombre-producto" name="input-nombre-producto" placeholder="Nombre de producto" autocomplete="off" required>
+            <input class="form-control producto" list="portafolio-opciones" id="SKU" name="SKU" placeholder="Nombre de producto" autocomplete="off" required>
             <datalist id="portafolio-opciones">
             </datalist>
-            <label for="input-nombre-producto" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
+            <label for="SKU" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
         </div> 
         <div class="form-floating col-4">
-            <input type="number" class="form-control" name="input-cantidad" placeholder="Cantidad" min="0" required>
-            <label for="input-cantidad" class="ms-3">Cantidad <span class="text-danger">*</span></label>
+            <input type="number" class="form-control producto" name="Quantity" placeholder="Cantidad" min="0" required>
+            <label for="Quantity" class="ms-3">Cantidad <span class="text-danger">*</span></label>
         </div>    
         <div class="form-floating col-4">
-            <input type="number" class="form-control" name="input-precio" placeholder="Precio" required>
-            <label for="input-precio" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
+            <input type="number" class="form-control producto" name="UnitPrice" placeholder="Precio" required>
+            <label for="UnitPrice" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
         </div>
         <div class="col-1">
             <button type="button" class="btn btn-outline-danger btn-lg btn-eliminar-producto">
@@ -99,4 +137,5 @@ async function getCurrentIncrement() {
 }
 
 window.addEventListener('load', getCurrentIncrement);
+btnSendManualOrder.addEventListener('click', sendManualOrder);
 btnAgregarProducto.addEventListener('click', agregarProducto);
