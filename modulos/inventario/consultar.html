@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Luci</title>
+    <title>Luci - Inventario</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv='cache-control' content='no-cache'>
@@ -32,182 +32,67 @@
     <aside class="aside fixed-top" id="sidebar"></aside>
     <header class="header" id="navbar"></header>
     <main class="main padding-base pb-4">
-        <div class="conteiner p-5">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <header class="header">
-                                <h1>Inventario</h1>
-                            </header>
-                            <div class="card-heder__title">
-                                
-                                <div class="col-md-4">
-                                    <h2 class="title">RESULTADOS</h2>
-                                </div>
-                                <div>
-                                    <button type="submit" name="btn_add" class="btn btn-primary" style="margin-left: 700px;">
-                                        FILTRAR<i class="bi bi__btn bi-filter-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="example_wrapper" class="dataTables_wrapper no-footer">
-                                    <div class="dataTables_length" id="example_length">
-                                        <label>Mostrar   
-                                            <select name="example_length" aria-controls="example" class="form-control">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select> Entradas
-                                        </label>
-                                    </div>
-                                    <div id="example_filter" class="dataTables_filter">
-                                        <label>Buscar:
-                                            <input type="search" class="form-control" placeholder="" aria-controls="example">
-                                        </label>
-                                    </div>
-                                </div>
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">SKU</th>
-                                        <th scope="col">BARCODE</th>
-                                        <th scope="col">DESCRRIPCIÓN</th>
-                                        <th scope="col">ENTRADAS</th>
-                                        <th scope="col">SALIDAS</th>
-                                        <th scope="col">INVENTARIO</th>
-                                        <th scope="col">DISPONIBLE</th>
-                                        <th scope="col">PSP</th>
-                                        <th scope="col">V/D</th>
-                                        <th scope="col">COBERTURA</th>
-                                        </tr>
-                                        <tbody>
-                                            <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
-                                            </tr>
-                                        </tbody>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
+        <section class="container-fluid px-5">
+            <header class="py-4">
+                <div class="d-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
+                    <h4>Consultar inventario</h4>
+                    <button type="button" class="btn btn-success">
+                        <i class="fa-regular fa-file-excel"></i><span class="ms-3">Exportar</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="floatingInputSearch" placeholder="" autocomplete="off">
+                        <button class="btn btn-outline-secondary">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                        <span>Mostrar</span>
+                        <select class="form-select-short" name="entradas-consulta" id="entradas-consulta">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span>Entradas</span>
                     </div>
                 </div>
-            </div>
-        </div>
+            </header>
+            <table id="tabla-consulta" class="table table-striped table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">SKU</th>
+                        <th scope="col">BARCODE</th>
+                        <th scope="col">DESCRRIPCIÓN</th>
+                        <th scope="col">ENTRADAS</th>
+                        <th scope="col">SALIDAS</th>
+                        <th scope="col">INVENTARIO</th>
+                        <th scope="col">DISPONIBLE</th>
+                        <th scope="col">PSP</th>
+                        <th scope="col">V/D</th>
+                        <th scope="col">COBERTURA</th>
+                        </tr>
+                </thead>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                <li class="page-item disabled" id="btn-previous-page">
+                    <a class="page-link text-main-red" href="#" aria-label="Previous" >
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item" id="btn-next-page">
+                    <a class="page-link text-main-red" href="#" aria-label="Next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </section>
     </main>
     <!-- Scripts to include HTML modules -->
     <script src="../../assets/js/include-files.js"></script>

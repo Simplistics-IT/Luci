@@ -3,19 +3,19 @@ const data = await response.json();
 const inputDepartamento = document.getElementById('Department');
 const inputCiudades = document.getElementById('City');
 
-data.forEach( departamento => {
+for (const departamento in data) {
     let opt = document.createElement('option');
-    opt.value = departamento.id;
-    opt.textContent += departamento.departamento;
+    opt.value = departamento;
+    opt.textContent += departamento;
     inputDepartamento.appendChild(opt);
-});
+}
 
 inputDepartamento.addEventListener( "change", function(e) {
     inputCiudades.innerHTML = '';
-    data[e.target.value].ciudades.forEach( ciudad => {
+    for (const ciudad in data[e.target.value]) {
         let opt = document.createElement('option');
         opt.value = ciudad;
         opt.textContent += ciudad;
         inputCiudades.append(opt);
-    });
+    }
 });

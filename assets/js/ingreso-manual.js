@@ -1,8 +1,8 @@
 /* Variables para conexión */
 const URL = 'https://luci-data-api-oun4264ida-uc.a.run.app/';
-const incrementId = "currentIncrement"
-const portafolioId = "getPortfolio";
-const createManualOrder = 'createManualOrder';
+const incrementId = "Orders/currentIncrement"
+const portafolioId = "Orders/getPortfolio";
+const createManualOrder = 'Orders/createManualOrder';
 const APIKEY = localStorage.getItem('token');
 let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + APIKEY);
@@ -18,27 +18,33 @@ const inputPrecio = document.getElementById('input-precio');
 const btnEliminarProducto = document.querySelector('.btn-eliminar-producto');
 const btnAgregarProducto = document.getElementById('btn-agregar-producto');
 let portafolioList = [];
-let dataToJson = {
-    Quantity: 0,
-    Total: 0
-};
 
 /* Variables para enviar la info */
 const btnSendManualOrder = document.getElementById('btn-agregar-pedido');
 const inputsIngresoManual = document.querySelectorAll('.input-ingreso-manual');
 const inputDireccion = document.querySelectorAll('.direccion');
 const inputProductos = document.getElementsByClassName('producto');
+let dataToSend;
+let dataToJson = {
+    ProductsQuantity: 0,
+    Total: 0
+};
 
-function sendManualOrder() {
+async function sendManualOrder() {
     let direccion = [];//Array con los datos de la dirección para ser concatenada
     let productosToJson = [];//Array de objetos donde se almacenan los productos
     let objProducto = {};//Con este objeto almaceno cada producto recibido del formulario y luego lo guardo en el arreglo productosToJson
 
-    inputDireccion.forEach( elem => {
-        if (elem.value != '')
-            direccion.push( elem.value );
-        else
+    inputDireccion.forEach( (elem, index) => {
+        if (elem.value != '' && elem.name != '') {
+            if (index === 2) {
+                direccion.push( `#${elem.value} -` );
+            } else {
+                direccion.push( elem.value );
+            }
+        } else {
             console.warn('No dejes campos vacíos');
+        }
     });//Para almacenar los datos de la direccion
 
     inputsIngresoManual.forEach( input => {
@@ -49,12 +55,19 @@ function sendManualOrder() {
     });//Para recibir los datos de los campos del formulario
 
     for (const producto of inputProductos) {
-        if (producto.name === 'UnitPrice' && producto.value != undefined) {
-            objProducto[producto.name] = producto.value;
-            productosToJson.push(objProducto);
-            objProducto = {};
-        } else if (producto.value != undefined) {
-            objProducto[producto.name] = producto.value;
+        if (producto.value != undefined && producto.value != '') {//Validamos que el valor no sea undefined ni esté vacío
+            if ( producto.name === 'SKU' ) {
+                console.log( producto.value.split(' | ')[0] );
+                objProducto[producto.name] = producto.value.split(' | ')[0];
+                objProducto['ProductDescription'] = producto.value.split(' | ')[1];
+            }  else {
+                objProducto[producto.name] = producto.value;
+            }
+            if ( producto.name === 'UnitPrice' ) {
+                objProducto[producto.name] = producto.value;
+                productosToJson.push(objProducto);
+                objProducto = {};
+            }
         }
     }//Para almacenar los productos como objetos dentro del array principal: dataToJson
 
@@ -67,12 +80,26 @@ function sendManualOrder() {
 
 
     dataToJson.Products.map( producto => {
-        dataToJson.Quantity += Number(producto.Quantity);
+        dataToJson.ProductsQuantity += Number(producto.Quantity);
         dataToJson.Total += Number(producto.Total);
     });
 
-    console.log(JSON.stringify(dataToJson));
+    dataToJson.ProductsQuantity = String(dataToJson.ProductsQuantity);
+    dataToJson.Total = String(dataToJson.Total);
+    dataToSend = JSON.stringify(dataToJson);
+    console.log( JSON.stringify(dataToJson) );
+
+    let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
+        method: "POST",
+        headers: {
+            "Authorization" : "Bearer " + APIKEY,
+            'Content-type' : 'application/json'
+        },
+        body: dataToSend
+    }).then( serverResponse => console.log( serverResponse ));
 }
+
+/* Funciones para la creación de nuevos productos */
 
 function agregarProducto() {
     const content = `
@@ -102,28 +129,6 @@ function agregarProducto() {
     nuevoProducto.querySelector('.btn-eliminar-producto').addEventListener('click', eliminarProducto);
 }
 
-function eliminarProducto(e) {
-    const btnEliminar = e.target;
-    const producto = btnEliminar.closest('.producto');
-    producto.remove();
-}
-
-function llenarConsecutivo(data) {
-    if (data) {
-        consecutivo.value = data;
-        consecutivo.classList('disabled');
-    }
-}
-
-function llenarPortafolio(data) {
-    data.forEach( item => {
-        portafolioList.push({
-            id: item.SP_SKU,
-            item: item.SP_DESCRIPCION
-        });
-    });
-}
-
 function buscarProducto() {
     portafolioList.forEach( producto => {
         let productoOpcion = document.createElement('option');
@@ -131,6 +136,38 @@ function buscarProducto() {
         portafolioOpciones.appendChild(productoOpcion);
     });
 }
+
+function eliminarProducto(e) {
+    const btnEliminar = e.target;
+    const producto = btnEliminar.closest('.producto');
+    producto.remove();
+}
+
+/* Funciones para obtención de datos sobre productos y número de orden */
+
+function llenarConsecutivo(data) {
+    if (data) {
+        consecutivo.value = data;
+        consecutivo.setAttribute('disabled', '');
+    } else {
+        console.log(`La información no llegó correctamente: ${data}`);
+    }
+}
+
+function llenarPortafolio(data) {
+    if (data) {
+        data.forEach( item => {
+            portafolioList.push({
+                id: item.SKU,
+                item: item.Description
+            });
+        });
+    } else {
+        console.log(`La información no llegó correctamente: ${data}`)
+    }
+}
+
+
 
 async function getCurrentIncrement() {
     let portafolioResponse = await fetch( `${URL}${portafolioId}`, {

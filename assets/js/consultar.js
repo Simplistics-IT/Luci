@@ -6,9 +6,9 @@ const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
 let defaultSize = 10;
 let currentPage = 1;
-let url = `https://luci-data-api-oun4264ida-uc.a.run.app/getOrders?`;
+let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
 const URL2 = 'https://luci-data-api-oun4264ida-uc.a.run.app/'
-const COMPLETE_ORDER = 'getCompleteOrder';
+const COMPLETE_ORDER = 'Orders/getCompleteOrder';
 let authHeaders = new Headers();
 
 authHeaders.append("Authorization", "Bearer " + ApiKey);
