@@ -43,19 +43,15 @@
                     </legend>
                     <div class="row mb-3">
                         <div class="form-floating col-2">
-                            <input type="text" class="form-control input-ingreso-manual" name="ClientID" placeholder="ID del cliente" required>
-                            <label class="ms-3" for="ClientID">ID cliente <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="form-floating col-2">
                             <input type="text" class="form-control input-ingreso-manual" id="input-numero-orden" name="OrderNumber" placeholder="Número de orden" required>
                             <label class="ms-3" for="OrderNumber">No. Orden <span class="text-danger">*</span></label>
                         </div>
-                        <div class="form-floating col-4">
+                        <div class="form-floating col-5">
                             <input type="text" class="form-control input-ingreso-manual" name="ClientName" placeholder="Nombre del cliente" required>
                             <label class="ms-3" for="ClientName">Nombre del cliente <span class="text-danger">*</span></label>
                         </div>
-                        <div class="form-floating col-4">
-                            <input type="text" class="form-control input-ingreso-manual" name="PhoneNumber" placeholder="ID del Cliente" required>
+                        <div class="form-floating col-5">
+                            <input type="number" class="form-control input-ingreso-manual" name="PhoneNumber" placeholder="ID del Cliente" required>
                             <label class="ms-3" sfor="PhoneNumber">Teléfono <span class="text-danger">*</span></label>
                         </div>
                     </div>
@@ -98,7 +94,7 @@
                                 <span class="input-group-text">#</span>
                                 <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
                                 <span class="input-group-text">-</span>
-                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
+                                <input type="number" class="form-control direccion" name="numero" placeholder="número" required>
                                 <select type="text" class="form-control direccion" name="final" required>
                                     <option value="">Tipo de residencia</option>
                                     <option value="apto">Apartamento</option>
@@ -108,7 +104,7 @@
                                     <option value="bloque">Bloque</option>
                                     <option value="habitacion">Habitación</option>
                                 </select>
-                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
+                                <input type="number" class="form-control direccion" name="numero" placeholder="número" required>
                             </div>
                         </div>
                     </div>
