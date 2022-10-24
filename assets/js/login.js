@@ -22,6 +22,7 @@ async function login() {
         localStorage.setItem('email', data.Email);
         location.href = "index.html";
     } else {
+        alertify.error('Usuario o contraseña incorrectos');
         throw Error("Daniel es gei");
     }
 }

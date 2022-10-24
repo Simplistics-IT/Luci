@@ -3,7 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
 
 :root {
-    --bg-red-main: #db3d30;
+    --bg-red-main: #d66158;
+    --bg-blue-main: #376371;
+    --bg-green-main : #58D68C;
     --bg-white: #fff;
 }
 
@@ -23,17 +25,21 @@ p {
 }
 
 .text-main-red {
-    color: #db3d30;
+    color: var(--bg-red-main);
 }
 
 .text-main-red:focus {
     box-shadow: none;
-    color: #db3d30;
+    color: var(--bg-red-main);
+}
+
+.text-main-green {
+    color: var(--bg-green-main);
 }
 
 .btn-primary {
-    background-color: #db3d30;
-    border: 1px solid #db3d30;
+    background-color: var(--bg-red-main);
+    border: 1px solid var(--bg-red-main);
 }
 .btn-primary:hover {
     background-color: #ac3125;
@@ -89,7 +95,7 @@ p {
 /* Estilo tabla consulta */
 
 .border-bottom-red {
-    border-bottom: #db3d30;
+    border-bottom: var(--bg-red-main);
 }
 
 .body-table {
@@ -118,8 +124,11 @@ p {
 }
 
 .page-link:hover {
-    color: #db3d30;
+    color: var(--bg-red-main);
 }
 
-/* Estilos de la tabla de consulta de pedido */
+/* Estilos del Dashboard */
 
+.card-dashboard {
+    min-height: 275px;
+}

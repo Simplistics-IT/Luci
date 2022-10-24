@@ -1,7 +1,7 @@
 /* Variables para conexión */
 const URL = 'https://luci-data-api-oun4264ida-uc.a.run.app/';
 const incrementId = "Orders/currentIncrement"
-const portafolioId = "Orders/getPortfolio";
+const portafolioId = "Portfolio/getPortfolio/Minimal";
 const createManualOrder = 'Orders/createManualOrder';
 const APIKEY = localStorage.getItem('token');
 let authHeaders = new Headers();
