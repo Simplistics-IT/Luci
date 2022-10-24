@@ -132,3 +132,27 @@ p {
 .card-dashboard {
     min-height: 275px;
 }
+
+/* Estilos de estados en pedidos */
+
+.estado-entregado, .estado-preparado, .estado-programado, .estado-transportadora {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.estado-programado {
+    background-color: #ffe1a4;
+}
+
+.estado-preparado {
+    background-color: #c7cfd1;
+    
+}
+
+.estado-transportadora {
+    background-color: #99B579;
+}
+
+.estado-entregado {
+    background-color: #c5e89c;
+}

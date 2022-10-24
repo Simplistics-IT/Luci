@@ -1,6 +1,6 @@
 function verifySession() {
     if ( localStorage.getItem('token') === null ) {
-        location.href = '../../modulos/login.html' ;
+        location.href = '../../login.html' ;
     }
 }
 

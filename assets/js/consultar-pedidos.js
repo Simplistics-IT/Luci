@@ -33,21 +33,17 @@ function renderTable(data) {
         //Data
         let OrderId             = document.createElement('td');
         let ClientName          = document.createElement('td');
-        let Channel             = document.createElement('td');
         let Integration_Date    = document.createElement('td');
-        let E_Commerce_Date     = document.createElement('td');
         let Guide_Numer         = document.createElement('td');
         let Shipping_Company    = document.createElement('td');
         let Status              = document.createElement('td');
-        let Total               = document.createElement('td');
+
+        changeOrderStateColor(Element.Status, Status);
 
         //Nodes 
         row.appendChild(OrderId);
-        row.appendChild(Integration_Date);
         row.appendChild(ClientName);
-        row.appendChild(Channel)
-        row.appendChild(Total);
-        row.appendChild(E_Commerce_Date);
+        row.appendChild(Integration_Date);
         row.appendChild(Status);
         row.appendChild(Shipping_Company);
         row.appendChild(Guide_Numer);
@@ -55,15 +51,26 @@ function renderTable(data) {
         //Data insertion
         OrderId.innerHTML = Element.OrderId;
         ClientName.innerHTML = Element.ClientName;
-        Channel.innerHTML = Element.Channel;
         Integration_Date.innerHTML = Element.Integration_Date;
-        E_Commerce_Date.innerHTML = Element.E_Commerce_Date;
         Guide_Numer.innerHTML = Element.Guide_Numer;
         Shipping_Company.innerHTML = Element.Shipping_Company;
-        Status.innerHTML = Element.Status;
-        Total.innerHTML = Element.Total;
 
     });
+}
+
+function changeOrderStateColor(orderStatus, statusElem) {
+    const spanStatus = document.createElement('span');
+    statusElem.appendChild( spanStatus );
+    spanStatus.textContent = orderStatus.toUpperCase();
+    if (orderStatus === 'ENTREGADO' || orderStatus === 'ENTREGADA') {
+        spanStatus.classList.add('estado-entregado');
+    } else if (orderStatus === 'Preparado') {
+        spanStatus.classList.add('estado-preparado');
+    } else if (orderStatus === 'Programado') {
+        spanStatus.classList.add('estado-programado');
+    } else {
+        spanStatus.classList.add('estado-transportadora');
+    }
 }
 
 function getEntries() {

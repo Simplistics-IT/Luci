@@ -58,7 +58,7 @@ function renderTable(data) {
         Available.innerHTML = Element.Available;
         PSP.innerHTML = Element.PSP;
         VD.innerHTML = Element.VD;
-        Coverage.innerHTML = Element.Coverage;
+        Coverage.innerHTML = Number(Element.Coverage).toFixed(2);
 
     });
 }
