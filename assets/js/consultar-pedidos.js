@@ -1,10 +1,11 @@
 const ApiKey = localStorage.getItem('token');
 const consultTable = document.getElementById('tabla-consulta');
+const productTable = document.getElementById('tabla-productos');
 const entries = document.getElementById('entradas-consulta');
 const btnPreviousPage = document.getElementById('btn-previous-page');
 const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
-let defaultSize = 10;
+let defaultSize = 25;
 let currentPage = 1;
 let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
 const URL2 = 'https://luci-data-api-oun4264ida-uc.a.run.app/'
@@ -13,12 +14,11 @@ let authHeaders = new Headers();
 
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
-function clearTable() {
-    consultTable.removeChild(consultTable.lastChild);
+function clearTable(table) {
+    table.removeChild(table.lastChild);
 }
 
 function renderTable(data) {
-    console.log(data);
     const tbody = document.createElement('tbody');
     tbody.setAttribute('id', 'tbody');
     consultTable.appendChild(tbody);
@@ -60,8 +60,10 @@ function renderTable(data) {
 
 function changeOrderStateColor(orderStatus, statusElem) {
     const spanStatus = document.createElement('span');
+    const orderStatusLowerCase = orderStatus.toLowerCase();
+    const orderStatusFirstLetterCap = orderStatusLowerCase[0].toUpperCase() + orderStatusLowerCase.slice(1);
     statusElem.appendChild( spanStatus );
-    spanStatus.textContent = orderStatus.toUpperCase();
+    spanStatus.textContent = orderStatusFirstLetterCap;
     if (orderStatus === 'ENTREGADO' || orderStatus === 'ENTREGADA') {
         spanStatus.classList.add('estado-entregado');
     } else if (orderStatus === 'Preparado') {
@@ -108,6 +110,7 @@ function searchFilter() {
 }
 
 async function renderModal (e) {
+    clearTable(productTable);
     //Order ID del elemento seleccionado
     const idElement = e.currentTarget.id;
     //Elementos para llenar datos del cliente
@@ -119,16 +122,14 @@ async function renderModal (e) {
     const departamentoDir = document.getElementById('departamento-dir');
     const municipioDir = document.getElementById('municipio-dir');
     const direccionDir = document.getElementById('direccion-dir');
-    const opcionEnvio = document.getElementById('opcion-envio');
-    const notaDireccion = document.getElementById('nota-direccion');
     //Elementos para llenar datos de producto
-    const padreListaProductos = document.getElementById('lista-productos');
-    padreListaProductos.innerHTML = '';
+    const tbody = document.createElement('tbody');
     let response = await fetch( `${URL2}${COMPLETE_ORDER}?orderNumber=${idElement}`, {
         method: "GET",
         headers: authHeaders
     });
     let data = await response.json();
+    console.log(data);
     idOrder.textContent = data.OrderNumber;
     nombreCliente.textContent = data.ClientName;
     telefonoCliente.textContent = data.PhoneNumber;
@@ -136,34 +137,56 @@ async function renderModal (e) {
     departamentoDir.textContent = data.Departament;
     municipioDir.textContent = data.City;
     direccionDir.textContent = data.Address;
-    /*opcionEnvio.textContent = data.SP_OPCION_ENVIO;
-    notaDireccion.textContent = data.SP_NOTAS_DIRECCION;*/
 
-    data.products.forEach( producto => {
-        padreListaProductos.innerHTML += `
-        <div class="card mb-3" style="min-width: 10rem; max-width: 33rem;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="${producto.ImageSource}" class="img-fluid rounded-start" alt="">
-                </div>
-                <div class="col-md-8 card-body-background">
-                    <div class="card-body">
-                    <h6 class="card-title">${producto.Description}</h6>
-                    <p class="card-text" >SKU: ${producto.EAN}</p>
-                    <p class="card-text" >$ ${producto.Value} x ${producto.Quantity}</p>
-                    <p class="card-text" ><span class="fw-bold">Subtotal:</span> $ ${producto.Value * producto.Quantity}</p>
-                    </div>
-                </div>
+    productTable.appendChild(tbody);
+    data.products.forEach( product => {
+        let row = document.createElement('tr');
+        //Data
+        let productImg          = document.createElement('td');
+        let productSKU          = document.createElement('td');
+        let productDescription  = document.createElement('td');
+        let productPrice        = document.createElement('td');
+        let productAmount       = document.createElement('td');
+        let productTotal        = document.createElement('td');
+
+        //Nodes 
+        tbody.appendChild(row);
+        row.appendChild(productImg);
+        row.appendChild(productSKU);
+        row.appendChild(productDescription);
+        row.appendChild(productPrice);
+        row.appendChild(productAmount);
+        row.appendChild(productTotal);
+ 
+        //Data insertion
+        if(product.ImageSource === null) {
+            productImg.innerHTML = `
+            <div class="img-round">
+                <img src="https://via.placeholder.com/120.png?text=No+hay+imagen" alt="">
             </div>
-        </div>
-        `;
+            `
+        } else {
+            productImg.innerHTML = `
+            <div class="img-round">
+                <img src="${product.ImageSource}" alt="">
+            </div>
+            `
+        }
+
+        productSKU.innerHTML = product.EAN;
+        productDescription.innerHTML = product.Description;
+        productPrice.innerHTML = product.Value;
+        productAmount.classList.add('text-center');
+        productAmount.innerHTML = product.Quantity;
+        productTotal.innerHTML = `$ ${product.Value * product.Quantity}`;
+
     });
 
 
 }
 
 async function getData(){
-    clearTable();
+    clearTable(consultTable);
     let response = await fetch( `${url}&page=${currentPage}&size=${defaultSize}`, {
             method: "GET",
             headers: authHeaders

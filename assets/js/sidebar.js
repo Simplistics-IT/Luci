@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', event => {
             btnToggle.addEventListener('click', () => {
 
                 //Cambiamos el ícono del menú cuando está abierto
-                btnIcon.classList.toggle('fa-xmark');
+                btnIcon.classList.toggle('fa-bars');
+                btnIcon.classList.toggle('fa-arrow-left');
 
                 //Abrimos el sidebar cuando se pulsa el botón de menú
                 elemAsideWidth.classList.toggle('aside-change');

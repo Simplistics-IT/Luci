@@ -30,194 +30,194 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
   </head>
   <body>
-      <aside class="aside fixed-top" id="sidebar">
-        <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
+    <aside class="aside fixed-top" id="sidebar">
+      <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
           <a href="/" class="d-flex align-items-center link-dark text-decoration-none">
-            <a href="#" class="text-center text-decoration-none">
-              <img class="hide-text" src="../../assets/img/_luci.png" alt="luci logo">
-            </a>
+              <a href="#" class="text-center text-decoration-none">
+                  <img class="hide-text" src="../../assets/img/_luci.png" alt="luci logo">
+              </a>
           </a>
           <hr>
           <p class="fs-6 text-muted text-uppercase hide-text">General</p>
           <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a href="../../../index.html" class="nav-link link-dark align-middle link-hover px-2" aria-current="page">
-                <i class="bi bi-speedometer2 icon me-2"></i>
-                <span class="hide-text">Dashboard</span>
+              <li class="nav-item">
+                  <a href="../../../index.html" class="nav-link link-dark align-middle link-hover px-2" aria-current="page">
+                      <i class="bi bi-speedometer2 icon me-2"></i>
+                      <span class="hide-text">Dashboard</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-pedidos" aria-expanded="false" aria-controls="collapse-pedidos">
+                      <div class="accordion-btn-title">
+                          <i class="bi bi-cart-plus icon me-2"></i>
+                          <span class="hide-text">Pedidos</span>
+                      </div>
+                      <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+                  </a>
+                  <div class="accordion-collapse collapse" id="collapse-pedidos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                      <ul class="nav flex-column ms-5">
+                          <li>
+                              <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
+                          </li>
+                          <li>
+                              <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/consultar.html">Consultar</a>
+                          </li>
+                          <li>
+                              <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/asignar-guias.html">Asignar guías</a>
+                          </li>
+                          <li>
+                              <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/importar.html">Importar</a>
+                          </li>
+                          <li>
+                              <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/generar-guias.html">Generar guías</a>
+                          </li>
+      
+                      </ul>
+                  </div>
+              </li>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-inventario" aria-expanded="false" aria-controls="collapse-inventario">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-inboxes icon me-2"></i>
+                      <span class="hide-text">Inventario</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
               </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-pedidos" aria-expanded="false" aria-controls="collapse-pedidos">
-                <div class="accordion-btn-title">
-                  <i class="bi bi-cart-plus icon me-2"></i>
-                  <span class="hide-text">Pedidos</span>
-                </div>
-                <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+              <div class="accordion-collapse collapse" id="collapse-inventario" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/inventario/consultar.html">Consultar</a>
+                  </li>
+                  </ul>
+              </div>
+              </li>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-portafolio" aria-expanded="false" aria-controls="collapse-portafolio">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-briefcase icon me-2"></i>
+                      <span class="hide-text">Portafolio</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
               </a>
-              <div class="accordion-collapse collapse" id="collapse-pedidos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                <ul class="nav flex-column ms-5">
+              <div class="accordion-collapse collapse" id="collapse-portafolio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
+                      <li>
+                          <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/consultar.html">Consultar</a>
+                      </li>
+                      <li>
+                          <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
+                      </li>
+                      <li>
+                          <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/importar.html">Importar</a>
+                      </li>
+                  </ul>
+              </div>
+              </li>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-shop icon me-2"></i>
+                      <span class="hide-text">Compras</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+              </a>
+              <div class="accordion-collapse collapse" id="collapse-compras" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
                   <li>
-                    <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
                   </li>
                   <li>
-                    <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/consultar.html">Consultar</a>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/compras/consultar.html">Consultar</a>
+                  </li>
+                  </ul>
+              </div>
+              </li>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-arrow-clockwise icon me-2"></i>
+                      <span class="hide-text">Devoluciones</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+              </a>
+              <div class="accordion-collapse collapse" id="collapse-devoluciones" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
                   </li>
                   <li>
-                    <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/asignar-guias.html">Asignar guías</a>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/consultar.html">Consultar</a>
+                  </li>
+                  </ul>
+              </div>
+              </li>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-cloud-download icon me-2"></i>
+                      <span class="hide-text">Descargas</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+              </a>
+              <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
                   </li>
                   <li>
-                    <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/importar.html">Importar</a>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
                   </li>
-                  <li>
-                    <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/generar-guias.html">Generar guías</a>
-                  </li>
-        
-                </ul>
+                  </ul>
               </div>
-            </li>
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-inventario" aria-expanded="false" aria-controls="collapse-inventario">
-              <div class="accordion-btn-title">
-                <i class="bi bi-inboxes icon me-2"></i>
-                <span class="hide-text">Inventario</span>
-              </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-inventario" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/inventario/consultar.html">Consultar</a>
               </li>
-              </ul>
-            </div>
-            </li>
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-portafolio" aria-expanded="false" aria-controls="collapse-portafolio">
-              <div class="accordion-btn-title">
-                <i class="bi bi-briefcase icon me-2"></i>
-                <span class="hide-text">Portafolio</span>
-              </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-portafolio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-                <li>
-                  <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/consultar.html">Consultar</a>
-                </li>
-                <li>
-                  <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
-                </li>
-                <li>
-                  <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/importar.html">Importar</a>
-                </li>
-              </ul>
-            </div>
-            </li>
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
-              <div class="accordion-btn-title">
-                <i class="bi bi-shop icon me-2"></i>
-                <span class="hide-text">Compras</span>
-              </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-compras" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
-              </li>
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/compras/consultar.html">Consultar</a>
-              </li>
-              </ul>
-            </div>
-            </li>
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
-              <div class="accordion-btn-title">
-                <i class="bi bi-arrow-clockwise icon me-2"></i>
-                <span class="hide-text">Devoluciones</span>
-              </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-devoluciones" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
-              </li>
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/consultar.html">Consultar</a>
-              </li>
-              </ul>
-            </div>
-            </li>
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
-              <div class="accordion-btn-title">
-                <i class="bi bi-cloud-download icon me-2"></i>
-                <span class="hide-text">Descargas</span>
-              </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
-              </li>
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
-              </li>
-              </ul>
-            </div>
-            </li>
           </ul>
           <hr>
           <p class="fs-6 text-muted text-uppercase hide-text">Ayuda</p>
           <ul class="nav nav-pills flex-column mb-auto">
-            <li>
-            <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-config" aria-expanded="false" aria-controls="collapse-config">
-              <div class="accordion-btn-title">
-                <i class="bi bi-gear icon me-2"></i>
-                <span class="hide-text">Configuración</span>
+              <li>
+              <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-config" aria-expanded="false" aria-controls="collapse-config">
+                  <div class="accordion-btn-title">
+                      <i class="bi bi-gear icon me-2"></i>
+                      <span class="hide-text">Configuración</span>
+                  </div>
+                  <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+              </a>
+              <div class="accordion-collapse collapse" id="collapse-config" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                  <ul class="nav flex-column ms-5">
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
+                  </li>
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
+                  </li>
+                  <li>
+                      <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/estados.html">Estados</a>
+                  </li>
+                  </ul>
               </div>
-              <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-            </a>
-            <div class="accordion-collapse collapse" id="collapse-config" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <ul class="nav flex-column ms-5">
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
               </li>
               <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
+              <a href="https://teclab.com.co/help/?nombre=JUAN%20URIBE&telefono=3217662040&get_link=luci" class="nav-link link-dark align-middle link-hover px-2">
+                  <i class="bi bi-megaphone icon me-2"></i>
+                  <span class="hide-text">Soporte</span>
+              </a>
               </li>
-              <li>
-                <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/estados.html">Estados</a>
-              </li>
-              </ul>
-            </div>
-            </li>
-            <li>
-            <a href="https://teclab.com.co/help/?nombre=JUAN%20URIBE&telefono=3217662040&get_link=luci" class="nav-link link-dark align-middle link-hover px-2">
-              <i class="bi bi-megaphone icon me-2"></i>
-              <span class="hide-text">Soporte</span>
-            </a>
-            </li>
           </ul>
           <p class="text-main-red">
-            Luci © 2022 Todos los derechos reservados
+              Luci © 2022 Todos los derechos reservados
           </p>
           <p class="text-main-red">
-            Desarrollado por Teclab <i class="fa-regular fa-heart "></i>
+              Desarrollado por Teclab <i class="fa-regular fa-heart "></i>
           </p>
-        </nav>
-      </aside>
-      <header class="header" id="navbar">
-        <nav class="navbar navbar-expand bg-light padding-base navbar-content-red border-bottom justify-content-between pe-4">
+      </nav>
+  </aside>
+  <header class="header" id="navbar">
+      <nav class="navbar navbar-expand bg-light padding-base navbar-content-red border-bottom justify-content-between pe-4">
           <!-- Sidebar Toggle-->
           <ul class="navbar-nav">
               <li class="nav-item">
                   <button class="btn btn-menu text-secondary btn-sidebar-toggle" id="btn-sidebar-toggle" href="#!">
-                      <i class="fas fa-bars btn-sidebar-icon" id="btn-sidebar-icon"></i>
+                      <i class="fas fa-arrow-left btn-sidebar-icon" id="btn-sidebar-icon"></i>
                   </button>
               </li>
               <li class="nav-item">
@@ -235,7 +235,9 @@
               </button>
           </ul>
       </nav>
-      </header>
+  </header>
+
+           
       <main class="main padding-base">
           <!-- Modal de consulta de elementos en la tabla -->
           <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -246,42 +248,52 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-4">
-                      <section>
-                          <div class="d-flex">
-                              <div class="me-5">
-                                <h5 class="text-main-red">Detalles de cliente</h5>
-                                <div class="ms-3">
-                                  <p class="fw-bold">Número Orden: <span class="fw-normal" id="id-order"></span></p>
-                                  <p class="fw-bold">Nombre Cliente: <span class="fw-normal" id="nombre-cliente"></span></p>
-                                  <p class="fw-bold">Teléfono: <span class="fw-normal" id="telefono-cliente"></span></p>
-                                  <p class="fw-bold">Email: <span class="fw-normal" id="email-cliente"></span></p>
-                                </div>
-                                <hr>
-                                <h5 class="text-main-red">Dirección</h5>
-                                <div class="ms-3">
-                                  <p class="fw-bold">Departamento: <span class="fw-normal" id="departamento-dir"></span></p>
-                                  <p class="fw-bold">Municipio: <span class="fw-normal" id="municipio-dir"></span></p>
-                                  <p class="fw-bold">Dirección: <span class="fw-normal text-wrap" id="direccion-dir"></span></p>
-                                </div>
-                                <hr>
-                                <h5 class="text-main-red">Adicional</h5>
-                                <div class="ms-3">
-                                  <p class="fw-bold">Opcion de envió: <span class="fw-normal" id="opcion-envio"></span></p>
-                                  <p class="fw-bold">Nota de dirección: <span class="fw-normal" id="nota-direccion"></span></p>
-                                </div>
+                      <section class="row">
+                        <div class="col-4">
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                              <div class="text-center">
+                                <h2>Información del Cliente</h2>
+                                <h5 class="mb-5">No. Orden: <span class="fw-normal" id="id-order"></span></h5>
+                                <i class="fa-solid fa-user icon-user mb-3"></i>
+                                <p><b id="nombre-cliente"></b></p>
+                                <p><b>ID:</b> 4959684100319</p>
+                                <i class="fas fa-angle-down icon-arrow-down"></i>
                               </div>
-                              <div class="vr"></div>
-                              <div class="ms-5">
-                                <h5 class="text-main-red">Productos</h5>
-                                <div id="lista-productos">
-                                </div>
+                
+                              <div class="contact-info flex-column">
+                                <p>
+                                  <i class="fas fa-phone mb-3 me-1"></i>
+                                  <span id="telefono-cliente"></span>
+                                </p>
+                                <p>
+                                  <i class="fas fa-envelope mb-3 me-1"></i>
+                                  <span id="email-cliente"></span>
+                                </p>
+                                <p>
+                                  <i class="fas fa-location-pin me-1"></i>
+                                  <span class="text-wrap" id="direccion-dir"></span>, <span id="municipio-dir"></span>, <span id="departamento-dir"></span>
+                                </p>
                               </div>
                             </div>
+                        </div>
+                        <div class="col-8 border-start">
+                            <table id="tabla-productos" class="table table-striped align-middle">
+                                <thead>
+                                    <tr>
+                                      <th>Producto</th>
+                                      <th>SKU</th>
+                                      <th>Descripción</th>
+                                      <th>Precio</th>
+                                      <th>Cantidad</th>
+                                      <th>Subtotal</th>
+                                    </tr>
+                                  </thead>
+                            </table>
+                        </div>
                       </section>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
               </div>
@@ -315,18 +327,20 @@
                       </div>
                   </div>
               </header>
-              <table id="tabla-consulta" class="table table-striped table-hover text-center">
-                  <thead>
-                      <tr>
-                          <th scope="col">Pedido</th>
-                          <th scope="col">Cliente</th>
-                          <th scope="col">Fecha integración</th>
-                          <th scope="col">Estado</th>
-                          <th scope="col">Transportadora</th>
-                          <th scope="col">Guía</th>
-                      </tr>
-                  </thead>
-              </table>
+              <div class="table-responsive rounded-top">
+                <table id="tabla-consulta" class="table table-striped table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pedido </th>
+                            <th scope="col">Cliente </th>
+                            <th scope="col">Fecha integración </th>
+                            <th scope="col">Estado </th>
+                            <th scope="col">Transportadora </th>
+                            <th scope="col">Guía </th>
+                        </tr>
+                    </thead>
+                </table>
+              </div>
               <nav aria-label="Page navigation example">
                   <ul class="pagination justify-content-center">
                     <li class="page-item disabled" id="btn-previous-page">

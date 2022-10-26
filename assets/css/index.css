@@ -16,10 +16,6 @@ html {
     font-size: 14px;
 }
 
-body::-webkit-scrollbar {
-    width: 10px;
-}
-
 p {
     margin: 0;
 }
@@ -58,26 +54,30 @@ p {
 /* Classes to change sidebar view */
 
 .aside {
-    left: -280px;
+    left: 0px;
     width: 280px;
     transition: 300ms ease-in-out;
 }
 
 .aside-change {
-    left: 0px;
+    left: -280px;
 }
 
 .padding-base {
-    padding-left: 24px;
+    padding-left: 300px;
     transition: 300ms ease-in-out;
 }
 
 .padding-change {
-    padding-left: 300px;
+    padding-left: 24px;
 
 }
 
 /* Estilos para el modal */
+
+.modal-xl {
+    max-width: 1400px;
+}
 
 .modal-rounded {
     border-radius: 16px;
@@ -87,10 +87,38 @@ p {
     background-color: rgba(0, 0, 0, .03);
 }
 
-.placeholder {
-    width: 200px;
-    height: .8rem;
-}
+.contact-info {
+    background-color: #f7f6f6;
+    width: 75%;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .icon-user {
+    color: var(--bg-red-main);
+    font-size: 6rem;
+  }
+
+  .icon-arrow-down {
+    color: var(--bg-red-main);
+    font-size: 3rem;
+  }
+
+  .product-gray {
+    padding: 16px;
+    background-color: #f7f6f6;
+  }
+
+  .product-white {
+    padding: 16px;
+    background-color: #fff;
+  }
+
+  .img-round img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
 
 /* Estilo tabla consulta */
 
@@ -107,6 +135,60 @@ p {
 .card-shadow {
     box-shadow: 5px 8px 8px 3px #0b0b0b;
 }
+
+thead {
+    background-color: var(--bg-red-main);
+    color: white;
+}
+
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-red-main)!important;
+}
+
+tbody {
+    border-top: none!important;
+}
+
+.table-responsive {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+}
+
+ /* Estilos barra (thumb) de scroll */
+ .table-responsive::-webkit-scrollbar-thumb {
+    background: var(--bg-red-main);
+    border-radius: 0 .25rem .25rem 0;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+   /* Estilos track de scroll */
+  .table-responsive::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 0 .25rem .25rem 0;
+  }
+  
+  .table-responsive::-webkit-scrollbar-track:hover, 
+  .table-responsive::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+  }
+  
+
+
 
 /* Consult Styles */
 
@@ -131,6 +213,14 @@ p {
 
 .card-dashboard {
     min-height: 275px;
+}
+
+.link-main-black {
+    transition: 200ms ease;
+}
+
+.link-main-black:hover {
+    color: var(--bg-red-main);
 }
 
 /* Estilos de estados en pedidos */
