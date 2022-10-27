@@ -5,6 +5,25 @@ const entries = document.getElementById('entradas-consulta');
 const btnPreviousPage = document.getElementById('btn-previous-page');
 const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
+
+/*
+
+ClientName
+Integration_Date
+Guide_Numer
+Shipping_Company
+Status
+
+*/
+
+//Elementos de la cabecera de la tabla para ordenar
+const thOrderId = document.getElementById('OrderId');
+const thClientName = document.getElementById('ClientName');
+const thIntegrationDate = document.getElementById('Integration_Date');
+const thGuideNumber = document.getElementById('Guide_Numer');
+const thShippingCompany = document.getElementById('Shipping_Company');
+const thStatus = document.getElementById('Status');
+
 let defaultSize = 25;
 let currentPage = 1;
 let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
@@ -109,6 +128,26 @@ function searchFilter() {
     getData();
 }
 
+async function requestOrderBy(orderBy) {
+    clearTable(consultTable);
+    let response = await fetch( `${url}&order_by=${orderBy}`, {
+        method: "GET",
+        headers: authHeaders
+    });
+
+    let data = await response.json();
+    if (response.status === 200) {
+        renderTable(data);
+    }
+}
+
+function orderByAction(e) {
+    const elemSelected = e.target;
+    (elemSelected.classList[1] === 'fa-arrow-up') ? requestOrderBy(`${elemSelected.id}!asc`) : requestOrderBy(`${elemSelected.id}!desc`);
+    elemSelected.classList.toggle('fa-arrow-up');
+    elemSelected.classList.toggle('fa-arrow-down');
+}
+
 async function renderModal (e) {
     clearTable(productTable);
     //Order ID del elemento seleccionado
@@ -198,10 +237,22 @@ async function getData(){
     }
 }
 
+
+//Evento de request de datos
 window.addEventListener('load', getData);
+//Evento de entradas
 entries.addEventListener('change', getEntries);
+//Eventos de paginación
 btnPreviousPage.addEventListener('click', previousPage);
 btnNextPage.addEventListener('click', nextPage);
+//Eventos de ordenar por
+thOrderId.addEventListener('click', orderByAction);
+thClientName.addEventListener('click', orderByAction);
+thIntegrationDate.addEventListener('click', orderByAction);
+thGuideNumber.addEventListener('click', orderByAction);
+thShippingCompany.addEventListener('click', orderByAction);
+thStatus.addEventListener('click', orderByAction);
+//Evento de busqueda por filtro
 consultInputSearch.addEventListener('change', searchFilter); 
 
 

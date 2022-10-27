@@ -26,11 +26,10 @@
     <link rel="stylesheet" href="../../assets/css/index.css">
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <link rel="stylesheet" href="../../assets/css/sidebars.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
 </head>
 <body class="sb-nav-fixed px-1 p-1">
     <aside class="aside fixed-top" id="sidebar">
-        <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 py-2 px-3 bg-light" id="sidenavAccordion">
+        <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
             <a href="/" class="d-flex align-items-center link-dark text-decoration-none">
                 <a href="#" class="text-center text-decoration-none">
                     <img class="hide-text" src="../../assets/img/_luci.png" alt="luci logo">
@@ -113,9 +112,9 @@
                 </div>
                 </li>
                 <li>
-                <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
+                <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
                     <div class="accordion-btn-title">
-                        <i class="bi bi-shop icon me-2"></i>
+                        <i class="text-muted bi bi-shop icon me-2"></i>
                         <span class="hide-text">Compras</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
@@ -132,9 +131,9 @@
                 </div>
                 </li>
                 <li>
-                <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
+                <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
                     <div class="accordion-btn-title">
-                        <i class="bi bi-arrow-clockwise icon me-2"></i>
+                        <i class="text-muted bi bi-arrow-clockwise icon me-2"></i>
                         <span class="hide-text">Devoluciones</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
@@ -151,23 +150,23 @@
                 </div>
                 </li>
                 <li>
-                <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
-                    <div class="accordion-btn-title">
-                        <i class="bi bi-cloud-download icon me-2"></i>
-                        <span class="hide-text">Descargas</span>
+                    <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
+                        <div class="accordion-btn-title">
+                            <i class="bi bi-cloud-download text-muted icon me-2"></i>
+                            <span class="hide-text">Descargas</span>
+                        </div>
+                        <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+                    </a>
+                    <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <ul class="nav flex-column ms-5">
+                        <li>
+                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
+                        </li>
+                        <li>
+                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
+                        </li>
+                        </ul>
                     </div>
-                    <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
-                </a>
-                <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <ul class="nav flex-column ms-5">
-                    <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
-                    </li>
-                    <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
-                    </li>
-                    </ul>
-                </div>
                 </li>
             </ul>
             <hr>
@@ -215,8 +214,8 @@
             <!-- Sidebar Toggle-->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <button class="btn btn-menu text-secondary btn-sidebar-toggle" id="btn-sidebar-toggle" href="#!">
-                        <i class="fas fa-bars btn-sidebar-icon" id="btn-sidebar-icon"></i>
+                    <button class="btn btn-menu text-secondary btn-sidebar-toggle" id="btn-sidebar-toggle" href="#!" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar menú">
+                        <i class="fas fa-arrow-left btn-sidebar-icon" id="btn-sidebar-icon"></i>
                     </button>
                 </li>
                 <li class="nav-item">
