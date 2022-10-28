@@ -239,7 +239,7 @@
 
     <main class="main padding-base pb-4">
         <section class="container-fluid px-5">
-            <header class="header py-3 border-bottom ">
+            <header class="header py-3 border-bottom">
                 <h2>Ingreso Manual</h2>
             </header>
             <form id="form-ingreso-manual" class="pt-3">
@@ -250,7 +250,10 @@
                     <div class="row mb-3">
                         <div class="form-floating col-2">
                             <input type="text" class="form-control input-ingreso-manual" id="input-numero-orden" name="OrderNumber" placeholder="Número de orden" required>
-                            <label class="ms-3" for="OrderNumber">No. Orden <span class="text-danger">*</span></label>
+                            <label class="ms-3" for="input-numero-orden">No. Orden <span class="text-danger">*</span></label>
+                            <div class="valid-feedback">
+                                Correcto
+                            </div>
                         </div>
                         <div class="form-floating col-5">
                             <input type="text" class="form-control input-ingreso-manual" name="ClientName" placeholder="Nombre del cliente" required>
@@ -376,7 +379,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <button type="button" name="btn-agregar-pedido" class="btn btn-primary btn-lg" id="btn-agregar-pedido">
+                <button type="submit" name="btn-agregar-pedido" class="btn btn-primary btn-lg" id="btn-agregar-pedido">
                     <span>Ingresar</span>
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>

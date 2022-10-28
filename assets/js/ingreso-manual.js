@@ -30,7 +30,8 @@ let dataToJson = {
     Total: 0
 };
 
-async function sendManualOrder() {
+async function sendManualOrder(e) {
+    //e.preventDefault();
     let direccion = [];//Array con los datos de la dirección para ser concatenada
     let productosToJson = [];//Array de objetos donde se almacenan los productos
     let objProducto = {};//Con este objeto almaceno cada producto recibido del formulario y luego lo guardo en el arreglo productosToJson
@@ -87,7 +88,6 @@ async function sendManualOrder() {
     dataToJson.ProductsQuantity = String(dataToJson.ProductsQuantity);
     dataToJson.Total = String(dataToJson.Total);
     dataToSend = JSON.stringify(dataToJson);
-    console.log( JSON.stringify(dataToJson) );
 
     let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
         method: "POST",
@@ -181,8 +181,6 @@ async function getCurrentIncrement() {
     let portafolioData = await portafolioResponse.json();
     let incrementData = await incrementResponse.json();
     if (incrementResponse.status === 200 && portafolioResponse.status === 200) {
-        console.log(portafolioData);
-        console.log(incrementData);
         llenarPortafolio(portafolioData);
         llenarConsecutivo(incrementData);
     }

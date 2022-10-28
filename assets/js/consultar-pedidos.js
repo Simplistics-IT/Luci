@@ -6,16 +6,6 @@ const btnPreviousPage = document.getElementById('btn-previous-page');
 const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
 
-/*
-
-ClientName
-Integration_Date
-Guide_Numer
-Shipping_Company
-Status
-
-*/
-
 //Elementos de la cabecera de la tabla para ordenar
 const thOrderId = document.getElementById('OrderId');
 const thClientName = document.getElementById('ClientName');
@@ -34,7 +24,9 @@ let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
 function clearTable(table) {
-    table.removeChild(table.lastChild);
+    const deleteChild = table.lastChild;
+    if(deleteChild.id !== 'thead-static')
+        table.removeChild(deleteChild);
 }
 
 function renderTable(data) {
@@ -198,7 +190,7 @@ async function renderModal (e) {
         row.appendChild(productTotal);
  
         //Data insertion
-        if(product.ImageSource === null) {
+        if(product.ImageSource === null || product.ImageSource === '') {
             productImg.innerHTML = `
             <div class="img-round">
                 <img src="https://via.placeholder.com/120.png?text=No+hay+imagen" alt="">

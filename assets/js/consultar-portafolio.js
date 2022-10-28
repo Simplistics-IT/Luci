@@ -4,6 +4,7 @@ const entries = document.getElementById('entradas-consulta');
 const btnPreviousPage = document.getElementById('btn-previous-page');
 const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
+
 let defaultSize = 10;
 let currentPage = 1;
 let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Portfolio/getPortfolio/Complete?`;
@@ -16,7 +17,6 @@ function clearTable() {
 }
 
 function renderTable(data) {
-    console.log(data);
     const tbody = document.createElement('tbody');
     tbody.setAttribute('id', 'tbody');
     consultTable.appendChild(tbody);
@@ -40,11 +40,15 @@ function renderTable(data) {
         row.appendChild(EAN);
         row.appendChild(Description);
         row.appendChild(Status);
- 
+        
         //Data insertion
-        ImgElem.setAttribute('src', `${Element.ImgSource}`);
-        ImgElem.setAttribute('width', '120px');
-        ImgElem.setAttribute('height', '120px');
+        if (Element.ImgSource === null || Element.ImgSource === '' ) {
+            ImgElem.setAttribute('src', 'https://via.placeholder.com/120.png?text=No+hay+imagen');
+        } else {
+            ImgElem.setAttribute('src', `${Element.ImgSource}`);
+            ImgElem.setAttribute('width', '120px');
+            ImgElem.setAttribute('height', '120px');
+        }
         SKU.innerHTML = Element.SKU;
         EAN.innerHTML = Element.EAN;
         Description.innerHTML = Element.Description;
@@ -86,6 +90,7 @@ function searchFilter() {
     url = `${url}&filter=${consultInputSearch.value}`;
     getData();
 }
+
 async function getData(){
     clearTable();
     let response = await fetch( `${url}&page=${currentPage}&size=${defaultSize}`, {
@@ -97,13 +102,16 @@ async function getData(){
     if (response.status === 200) {
         renderTable(data);
     }
-    console.log(response);
 }
 
+//Evento de request de datos
 window.addEventListener('load', getData);
+//Evento de entradas
 entries.addEventListener('change', getEntries);
+//Eventos de paginación
 btnPreviousPage.addEventListener('click', previousPage);
 btnNextPage.addEventListener('click', nextPage);
+//Evento de busqueda por filtro
 consultInputSearch.addEventListener('change', searchFilter); 
 
 
