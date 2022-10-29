@@ -217,7 +217,7 @@
                 </ul>
                 <ul class="navbar-nav d-none d-md-flex align-items-center">
                     <li class="nav-item">
-                        <img class="img-profile" src="../../assets/img/profile-img.png">
+                        <img class="img-profile" id="user-img-profile" src="../../assets/img/profile-img.png">
                     </li>
                     <button type="button" class="btn btn-logout" id="btn-logout">
                         Cerrar sesión
@@ -256,7 +256,7 @@
                                 <li class="nav-link">
                                     <a class="link-main-black text-decoration-none link-dark" href="modulos/portafolio/consultar.html"><i class="bi bi-briefcase icon me-1"></i> Consultar portafolio</a>
                                 </li>
-                            </ul>
+                            </ul>type="module" 
                         </div>
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Shopify</h5>
-                          <p class="card-subtitle mb-2 text-muted">0</p>
+                          <p class="card-subtitle mb-2 text-muted" id="shopify-orders">0</p>
                           <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
                         </div>
                     </div>
@@ -300,7 +300,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Luci</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">0</h6>
+                          <h6 class="card-subtitle mb-2 text-muted" id="luci-orders">0</h6>
                           <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
                         </div>
                     </div>
@@ -309,7 +309,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Programado</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">0</h6>
+                          <h6 class="card-subtitle mb-2 text-muted" id="programmed-orders">0</h6>
                           <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
                         </div>
                     </div>
@@ -318,7 +318,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Preparados</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">0</h6>
+                          <h6 class="card-subtitle mb-2 text-muted" id="prepared-orders">0</h6>
                           <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
                         </div>
                     </div>
@@ -334,5 +334,6 @@
         <!-- Scripts de LUCI -->
         <script src="assets/js/logout.js"></script>
         <script src="assets/js/sidebar.js"></script>
+        <script src="assets/js/dashboard.js"></script>
     </body>
 </html>

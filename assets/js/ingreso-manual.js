@@ -31,7 +31,7 @@ let dataToJson = {
 };
 
 async function sendManualOrder(e) {
-    //e.preventDefault();
+    e.preventDefault();
     let direccion = [];//Array con los datos de la dirección para ser concatenada
     let productosToJson = [];//Array de objetos donde se almacenan los productos
     let objProducto = {};//Con este objeto almaceno cada producto recibido del formulario y luego lo guardo en el arreglo productosToJson

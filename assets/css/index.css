@@ -41,6 +41,11 @@ p {
     background-color: #ac3125;
     border: 1px solid #ac3125;
 }
+.btn-primary:focus {
+    box-shadow: none;
+    background-color: #ac3125;
+    border: 1px solid #ac3125;
+}
 
 .form-control:focus {
     box-shadow: none;
@@ -162,6 +167,7 @@ tbody {
 }
 
  /* Estilos barra (thumb) de scroll */
+
  .table-responsive::-webkit-scrollbar-thumb {
     background: var(--bg-red-main);
     border-radius: 0 .25rem .25rem 0;

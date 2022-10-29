@@ -13,7 +13,11 @@ let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
 function clearTable() {
-    consultTable.removeChild(consultTable.lastChild);
+    const tbodyToDelete = document.querySelectorAll('#tbody');
+
+    tbodyToDelete.forEach( tbody => {
+        tbody.remove();
+    });
 }
 
 function renderTable(data) {

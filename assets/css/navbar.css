@@ -29,7 +29,8 @@
     cursor: pointer;
     border: 2px solid #db3d30;
     border-radius: 50%;
-    width: 3rem;
+    width: 5rem;
+    height: 3rem;
 }
 
 .btn-logout:focus {

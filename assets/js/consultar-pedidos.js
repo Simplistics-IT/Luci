@@ -24,9 +24,11 @@ let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
 function clearTable(table) {
-    const deleteChild = table.lastChild;
-    if(deleteChild.id !== 'thead-static')
-        table.removeChild(deleteChild);
+    const tbodyToDelete = document.querySelectorAll('#tbody');
+
+    tbodyToDelete.forEach( tbody => {
+        tbody.remove();
+    });
 }
 
 function renderTable(data) {
@@ -61,6 +63,7 @@ function renderTable(data) {
  
         //Data insertion
         OrderId.innerHTML = Element.OrderId;
+        ClientName.classList.add('text-start');
         ClientName.innerHTML = Element.ClientName;
         Integration_Date.innerHTML = Element.Integration_Date;
         Guide_Numer.innerHTML = Element.Guide_Numer;
