@@ -23,12 +23,18 @@ let authHeaders = new Headers();
 
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
-function clearTable(table) {
+function clearTableConsult() {
     const tbodyToDelete = document.querySelectorAll('#tbody');
 
     tbodyToDelete.forEach( tbody => {
         tbody.remove();
     });
+}
+
+function clearTableProducts() {
+    const childToDelete = productTable.lastChild;
+
+    productTable.removeChild(childToDelete);
 }
 
 function renderTable(data) {
@@ -124,7 +130,7 @@ function searchFilter() {
 }
 
 async function requestOrderBy(orderBy) {
-    clearTable(consultTable);
+    clearTableConsult();
     let response = await fetch( `${url}&order_by=${orderBy}`, {
         method: "GET",
         headers: authHeaders
@@ -144,7 +150,7 @@ function orderByAction(e) {
 }
 
 async function renderModal (e) {
-    clearTable(productTable);
+    clearTableProducts();
     //Order ID del elemento seleccionado
     const idElement = e.currentTarget.id;
     //Elementos para llenar datos del cliente
@@ -163,7 +169,6 @@ async function renderModal (e) {
         headers: authHeaders
     });
     let data = await response.json();
-    console.log(data);
     idOrder.textContent = data.OrderNumber;
     nombreCliente.textContent = data.ClientName;
     telefonoCliente.textContent = data.PhoneNumber;
@@ -220,7 +225,7 @@ async function renderModal (e) {
 }
 
 async function getData(){
-    clearTable(consultTable);
+    clearTableConsult();
     let response = await fetch( `${url}&page=${currentPage}&size=${defaultSize}`, {
             method: "GET",
             headers: authHeaders
