@@ -1,6 +1,6 @@
 /* Navbar Main Styles */
 .navbar {
-    height: 60px;
+    height: 70px;
 }
 
 .nav-link-red {
@@ -25,12 +25,20 @@
     box-shadow: none;
 }
 
+.user-info {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .img-profile {
     cursor: pointer;
     border: 2px solid #db3d30;
     border-radius: 50%;
-    width: 5rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .btn-logout:focus {

@@ -1,6 +1,7 @@
 const URL = `https://luci-data-api-oun4264ida-uc.a.run.app/User/getUserInfo`;
 const ApiKey = localStorage.getItem('token');
 const userImgProfile = document.getElementById('user-img-profile');
+const userName = document.getElementById('user-name');
 const shopifyOrders = document.getElementById('shopify-orders');
 const luciOrders = document.getElementById('luci-orders');
 const programmedOrders = document.getElementById('programmed-orders');
@@ -30,6 +31,7 @@ async function requestDashboard() {
         programmedOrders.textContent = userInfoData.ProgrammedActual;
         preparedOrders.textContent = userInfoData.PreparedActual;
     }
+    userName.textContent = localStorage.getItem('username');
     userImgProfile.setAttribute('src', localStorage.getItem('imgUrl'));
 }
 requestDashboard();
