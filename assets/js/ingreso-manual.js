@@ -25,6 +25,7 @@ const inputsIngresoManual = document.querySelectorAll('.input-ingreso-manual');
 const inputDireccion = document.querySelectorAll('.direccion');
 const inputProductos = document.getElementsByClassName('producto');
 let dataToSend;
+let concatTipoDoc = "";
 let dataToJson = {
     ProductsQuantity: 0,
     Total: 0
@@ -49,9 +50,18 @@ async function sendManualOrder(e) {
     });//Para almacenar los datos de la direccion
 
     inputsIngresoManual.forEach( input => {
-        if (input.value != '' && input.name != '')
-            dataToJson[input.name] = input.value;
-        else
+        if (input.value != '' && input.name != '') {
+            if(input.id === 'tipo-doc-cliente') {
+                concatTipoDoc += input.value;
+            } 
+            if(input.name === 'ClientID') {
+                concatTipoDoc += input.value;
+                dataToJson[input.name] = concatTipoDoc;
+                concatTipoDoc = '';
+            }
+            if(input.name !== 'tipo-doc-cliente' && input.name !== 'ClientID')
+                dataToJson[input.name] = input.value;
+        } else
             console.warn('No dejes campos vacíos');
     });//Para recibir los datos de los campos del formulario
 
@@ -88,7 +98,7 @@ async function sendManualOrder(e) {
     dataToJson.ProductsQuantity = String(dataToJson.ProductsQuantity);
     dataToJson.Total = String(dataToJson.Total);
     dataToSend = JSON.stringify(dataToJson);
-
+    console.log(dataToJson);
     let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
         method: "POST",
         headers: {
@@ -101,19 +111,19 @@ async function sendManualOrder(e) {
 
 /* Funciones para la creación de nuevos productos */
 
-function agregarProducto() {
+function agregarProducto() {4
     const content = `
-        <div class="form-floating col-3">
+        <div class="form-floating col-5">
             <input class="form-control producto" list="portafolio-opciones" id="SKU" name="SKU" placeholder="Nombre de producto" autocomplete="off" required>
             <datalist id="portafolio-opciones">
             </datalist>
             <label for="SKU" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
         </div> 
-        <div class="form-floating col-4">
+        <div class="form-floating col-3">
             <input type="number" class="form-control producto" name="Quantity" placeholder="Cantidad" min="0" required>
             <label for="Quantity" class="ms-3">Cantidad <span class="text-danger">*</span></label>
         </div>    
-        <div class="form-floating col-4">
+        <div class="form-floating col-3">
             <input type="number" class="form-control producto" name="UnitPrice" placeholder="Precio" required>
             <label for="UnitPrice" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
         </div>

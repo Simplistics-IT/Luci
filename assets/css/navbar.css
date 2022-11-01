@@ -1,6 +1,6 @@
 /* Navbar Main Styles */
 .navbar {
-    height: 70px;
+    height: 80px;
 }
 
 .nav-link-red {
@@ -26,10 +26,10 @@
 }
 
 .user-info {
-    padding: 4px;
+    padding: 8px;
     background-color: #fff;
     border: 1px solid #cecece;
-    border-radius: 4px;
+    border-radius: 16px;
     cursor: pointer;
 }
 

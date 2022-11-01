@@ -14,6 +14,11 @@ const thGuideNumber = document.getElementById('Guide_Numer');
 const thShippingCompany = document.getElementById('Shipping_Company');
 const thStatus = document.getElementById('Status');
 
+//Elementos para exportar consultas
+const btnExportar = document.getElementById('btn-exportar');
+const UrlExportar = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/export?`;
+
+//Valores por defecto del sitio
 let defaultSize = 25;
 let currentPage = 1;
 let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
@@ -45,7 +50,7 @@ function renderTable(data) {
         let row = document.createElement('tr');
         row.setAttribute('id', Element.OrderId);
         row.setAttribute('data-bs-toggle', 'modal');
-        row.setAttribute('data-bs-target', '#staticBackdrop')
+        row.setAttribute('data-bs-target', '#staticBackdrop');
         tbody.appendChild(row);
         row.addEventListener('click', renderModal);
 
@@ -128,6 +133,22 @@ function searchFilter() {
     url = `${url}&filter=${consultInputSearch.value}`;
     getData();
 }
+
+async function exportConsult() {
+    let response = await fetch( `${UrlExportar}filter=${consultInputSearch.value}`, {
+        method: "GET",
+        headers: authHeaders
+    });
+
+    let data = await response.blob();
+    if (response.status === 200) {
+        let a = document.createElement("a");
+        let fileNameDate = new Date();
+        a.href = window.URL.createObjectURL(data);
+        a.download = `exported-${fileNameDate.getFullYear()}-${fileNameDate.getMonth()}-${fileNameDate.getDate()}-${fileNameDate.getSeconds()}`;
+        a.click();
+    }
+} 
 
 async function requestOrderBy(orderBy) {
     clearTableConsult();
@@ -253,7 +274,10 @@ thGuideNumber.addEventListener('click', orderByAction);
 thShippingCompany.addEventListener('click', orderByAction);
 thStatus.addEventListener('click', orderByAction);
 //Evento de busqueda por filtro
-consultInputSearch.addEventListener('change', searchFilter); 
+consultInputSearch.addEventListener('change', searchFilter);
+//Evento de exportar
+btnExportar.addEventListener('click', exportConsult);
+
 
 
 

@@ -252,3 +252,9 @@ tbody {
 .estado-entregado {
     background-color: #c5e89c;
 }
+
+/* Estilo de ingreso manual */
+
+.input-group-styles {
+    min-height: 44px;
+}
