@@ -35,7 +35,6 @@
                     <img class="hide-text" src="../../assets/img/_luci.png" alt="luci logo">
                 </a>
             </a>
-            <nav id="nav-bar" class="
             <hr>
             <p class="fs-6 text-muted text-uppercase hide-text">General</p>
             <ul class="nav nav-pills flex-column">
@@ -62,10 +61,23 @@
                                 <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/consultar.html">Consultar</a>
                             </li>
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/asignar-guias.html">Asignar guías</a>
-                            </li>
-                            <li>
                                 <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/importar.html">Importar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-guias" aria-expanded="false" aria-controls="collapse-guias">
+                        <div class="accordion-btn-title">
+                            <i class="bi bi-bookmark-plus icon me-2"></i>
+                            <span class="hide-text">Guías</span>
+                        </div>
+                        <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
+                    </a>
+                    <div class="accordion-collapse collapse" id="collapse-guias" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <ul class="nav flex-column ms-5">
+                            <li>
+                                <a class="nav-link link-dark link-hover" href="../../modulos/guias/asignar-guias.html">Asignar Guías</a>
                             </li>
                         </ul>
                     </div>
@@ -189,7 +201,6 @@
                         <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/estados.html">Estados</a>
                     </li>
                     </ul>
-                    <nav id="nav-bar" class="
                 </div>
                 </li>
                 <li>
@@ -212,30 +223,33 @@
             <!-- Sidebar Toggle-->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <button class="btn btn-menu text-secondary btn-sidebar-toggle" id="btn-sidebar-toggle" href="#!">
+                    <button class="btn btn-menu text-secondary btn-sidebar-toggle" id="btn-sidebar-toggle" href="#!" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar menú">
                         <i class="fas fa-arrow-left btn-sidebar-icon" id="btn-sidebar-icon"></i>
                     </button>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-red">
-                        <i class="bi bi-be  
-                        <!-- Alertify CSS -->
-                        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-                        ll"></i>
+                        <i class="bi bi-bell"></i>
                     </a>
                 </li>
             </ul>
-            <ul class="navbar-nav d-none d-md-flex align-items-center">
-                <li class="nav-item">
-                    <img class="img-profile" src="../../assets/img/profile-img.png">
-                </li>
-                <button type="button" class="btn btn-logout" id="btn-logout">
-                    Cerrar sesión
-                </button>
-            </ul>
+            <div class="dropdown navbar-nav d-none d-md-flex align-items-center">
+                <div class="dropdown-toggle nav-item user-info" id="userSettingsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="img-profile" id="user-img-profile" src="../../assets/img/profile-img.png">
+                    <span id="user-name"></span>
+                </div>
+                <ul class="dropdown-menu" aria-labelledby="userSettingsMenu">
+                    <li>
+                        <button type="button" class="btn btn-logout" id="btn-logout">
+                            <i class="bi bi-box-arrow-left"></i>
+                            Cerrar sesión
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main class="main padding-base">
+    <main class="main padding-base pb-4">
         <div class="container p-5">
             <header class="header">
                 <h1>Ingreso Guía</h1>
@@ -250,14 +264,13 @@
         </div> 
     </main>
 
-    <!-- Scripts to include HTML modules -->
-    <script src="../../assets/js/index.js"></script>
     <!-- Scripts Required by bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts de LUCI -->
+    <script src="../../assets/js/index.js"></script>
+    <script src="../../assets/js/logout.js"></script>
 
 </body>
 </html>

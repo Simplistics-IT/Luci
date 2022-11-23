@@ -20,6 +20,15 @@ p {
     margin: 0;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] { 
+    -moz-appearance:textfield; 
+}
+
 .text-main-red {
     color: var(--bg-red-main);
 }
@@ -257,4 +266,38 @@ tbody {
 
 .input-group-styles {
     min-height: 44px;
+}
+
+/* Estilos personalizados para forms */
+
+.file {
+    width: 100%;
+    height: 44px;
+}
+
+.file-custom {
+    height: 44px;
+}
+
+.file-custom:before {
+    display: flex;
+    align-items: center;
+    color: #0b0b0b;
+    height: 44px;
+    content: 'Agregar';
+}
+
+.file-custom::after {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    content: attr(data-content);
+}
+
+.invalid-img-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
 }
