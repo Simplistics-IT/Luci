@@ -34,13 +34,13 @@ function clearTableConsult() {
     tbodyToDelete.forEach( tbody => {
         tbody.remove();
     });
-}
+}//Función para limpiar la tabla de consultas
 
 function clearTableProducts() {
     const childToDelete = productTable.lastChild;
 
     productTable.removeChild(childToDelete);
-}
+}//Función para limpiar el modal de productos
 
 function renderTable(data) {
     const tbody = document.createElement('tbody');
@@ -81,7 +81,7 @@ function renderTable(data) {
         Shipping_Company.innerHTML = Element.Shipping_Company;
 
     });
-}
+}//Función para renderizar la tabla de consultas
 
 function changeOrderStateColor(orderStatus, statusElem) {
     const spanStatus = document.createElement('span');
@@ -98,12 +98,14 @@ function changeOrderStateColor(orderStatus, statusElem) {
     } else {
         spanStatus.classList.add('estado-transportadora');
     }
-}
+}//Función para validar los estados de los pedidos
+
+/* Las siguientes son funciones para el filtrado de los datos en la tabla de consulta */
 
 function getEntries() {
         defaultSize = entries.value;
         getData();
-}
+}//Función para cambiar la cantidad de datos a mostrar en la tabla
 
 function nextPage() {
     if (currentPage === 1) {
@@ -114,7 +116,7 @@ function nextPage() {
         currentPage +=1;
         getData();
     }
-}
+}//Función para el cambio de página dentro de las consultas a la siguiente
 
 function previousPage() {
     if (currentPage === 2) {
@@ -126,16 +128,20 @@ function previousPage() {
         currentPage -= 1;
         getData();
     } 
-}
+}//Función para el cambio de página dentro de las consultas a la anterior
 
 function searchFilter() {
     currentPage = 1;
     url = `${url}&filter=${consultInputSearch.value}`;
     getData();
-}
+}//Función para el campo de busqueda
+
+/* Las siguiente es la función para la exportación de datos */
 
 async function exportConsult() {
-    let response = await fetch( `${UrlExportar}filter=${consultInputSearch.value}`, {
+    let urlUnida = `${UrlExportar}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`;
+    console.log(urlUnida);
+    let response = await fetch( urlUnida, {
         method: "GET",
         headers: authHeaders
     });
@@ -148,7 +154,7 @@ async function exportConsult() {
         a.download = `exported-${fileNameDate.getFullYear()}-${fileNameDate.getMonth()}-${fileNameDate.getDate()}-${fileNameDate.getSeconds()}`;
         a.click();
     }
-} 
+}
 
 async function requestOrderBy(orderBy) {
     clearTableConsult();

@@ -187,7 +187,7 @@ tbody {
   }
   
   .table-responsive::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
+    background: #ac3125;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
   }
   

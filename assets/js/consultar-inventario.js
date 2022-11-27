@@ -16,7 +16,7 @@ const thPSP = document.getElementById('PSP');
 const thVD = document.getElementById('VD');
 const thCoverage = document.getElementById('Coverage');
 
-let defaultSize = 10;
+let defaultSize = 25;
 let currentPage = 1;
 let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Inventory/getInventory?`;
 const URL2 = 'https://luci-data-api-oun4264ida-uc.a.run.app/'

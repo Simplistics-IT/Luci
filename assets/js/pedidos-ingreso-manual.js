@@ -31,6 +31,16 @@ let dataToJson = {
     Total: 0
 };
 
+async function apiConnect(URL, HEADER, METHOD="", BODY = "") {
+    let manualFormSend = await fetch( URL, {
+        method: METHOD,
+        headers: HEADER,
+        body: BODY
+    }).then( serverResponse => console.log( serverResponse ) );
+
+    return manualFormSend;
+}
+
 async function sendManualOrder(e) {
     e.preventDefault();
     let direccion = [];//Array con los datos de la dirección para ser concatenada
@@ -44,8 +54,11 @@ async function sendManualOrder(e) {
             } else {
                 direccion.push( elem.value );
             }
+            elem.classList.add('is-valid');
+            elem.classList.remove('is-invalid');
         } else {
-            console.warn('No dejes campos vacíos');
+            elem.classList.add('is-invalid');
+            elem.classList.remove('is-valid');
         }
     });//Para almacenar los datos de la direccion
 
@@ -61,8 +74,12 @@ async function sendManualOrder(e) {
             }
             if(input.name !== 'tipo-doc-cliente' && input.name !== 'ClientID')
                 dataToJson[input.name] = input.value;
-        } else
-            console.warn('No dejes campos vacíos');
+            input.classList.add('is-valid');
+            input.classList.remove('is-invalid');
+        } else {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+        }
     });//Para recibir los datos de los campos del formulario
 
     for (const producto of inputProductos) {
@@ -79,6 +96,11 @@ async function sendManualOrder(e) {
                 productosToJson.push(objProducto);
                 objProducto = {};
             }
+            producto.classList.add('is-valid');
+            producto.classList.remove('is-invalid');
+        } else {
+            producto.classList.add('is-invalid');
+            producto.classList.remove('is-valid');
         }
     }//Para almacenar los productos como objetos dentro del array principal: dataToJson
 
@@ -99,14 +121,15 @@ async function sendManualOrder(e) {
     dataToJson.Total = String(dataToJson.Total);
     dataToSend = JSON.stringify(dataToJson);
     console.log(dataToJson);
-    let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
+    apiConnect(`${URL}${createManualOrder}`, authHeaders, 'POST', dataToSend);
+    /*let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
         method: "POST",
         headers: {
             "Authorization" : "Bearer " + APIKEY,
             'Content-type' : 'application/json'
         },
         body: dataToSend
-    }).then( serverResponse => console.log( serverResponse ));
+    }).then( serverResponse => console.log( serverResponse ));*/
 }
 
 /* Funciones para la creación de nuevos productos */
