@@ -16,14 +16,17 @@ const thStatus = document.getElementById('Status');
 
 //Elementos para exportar consultas
 const btnExportar = document.getElementById('btn-exportar');
-const UrlExportar = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/export?`;
 
 //Valores por defecto del sitio
 let defaultSize = 25;
 let currentPage = 1;
-let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
-const URL2 = 'https://luci-data-api-oun4264ida-uc.a.run.app/'
-const COMPLETE_ORDER = 'Orders/getCompleteOrder';
+let currentOrder = 'Integration_Date!desc';
+
+//URLs para consumo de la API
+const URL_EXPORT = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/export?`;
+const URL_ORDERS = `https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getOrders?`;
+const URL_COMPLETE_ORDER = 'https://luci-data-api-oun4264ida-uc.a.run.app/Orders/getCompleteOrder?';
+let urlFilter = '';
 let authHeaders = new Headers();
 
 authHeaders.append("Authorization", "Bearer " + ApiKey);
@@ -132,14 +135,14 @@ function previousPage() {
 
 function searchFilter() {
     currentPage = 1;
-    url = `${url}&filter=${consultInputSearch.value}`;
+    urlFilter = `${URL_ORDERS}filter=${consultInputSearch.value}`;
     getData();
 }//Función para el campo de busqueda
 
 /* Las siguiente es la función para la exportación de datos */
 
 async function exportConsult() {
-    let urlUnida = `${UrlExportar}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`;
+    let urlUnida = `${URL_EXPORT}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}&order_by=${currentOrder}`;
     console.log(urlUnida);
     let response = await fetch( urlUnida, {
         method: "GET",
@@ -158,7 +161,8 @@ async function exportConsult() {
 
 async function requestOrderBy(orderBy) {
     clearTableConsult();
-    let response = await fetch( `${url}&order_by=${orderBy}`, {
+    currentOrder = orderBy;
+    let response = await fetch( `${URL_ORDERS}filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}&order_by=${currentOrder}`, {
         method: "GET",
         headers: authHeaders
     });
@@ -191,7 +195,7 @@ async function renderModal (e) {
     const direccionDir = document.getElementById('direccion-dir');
     //Elementos para llenar datos de producto
     const tbody = document.createElement('tbody');
-    let response = await fetch( `${URL2}${COMPLETE_ORDER}?orderNumber=${idElement}`, {
+    let response = await fetch( `${URL_COMPLETE_ORDER}orderNumber=${idElement}`, {
         method: "GET",
         headers: authHeaders
     });
@@ -253,7 +257,7 @@ async function renderModal (e) {
 
 async function getData(){
     clearTableConsult();
-    let response = await fetch( `${url}&page=${currentPage}&size=${defaultSize}`, {
+    let response = await fetch( `${URL_ORDERS}filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}&order_by=${currentOrder}`, {
             method: "GET",
             headers: authHeaders
     });
