@@ -41,9 +41,23 @@ function clearTableConsult() {
 
 function clearTableProducts() {
     const childToDelete = productTable.lastChild;
-
     productTable.removeChild(childToDelete);
 }//Función para limpiar el modal de productos
+
+function asignarEnlaceTransportadora(elemento, transportadora, guia) {
+    let enlace = document.createElement('a');
+    switch (transportadora) {
+        case 'Coordinadora':
+            enlace.setAttribute('href', `https://www.coordinadora.com/portafolio-de-servicios/servicios-en-linea/rastrear-guias/?guia=${guia}`);
+            enlace.setAttribute('target', '_blank');
+            enlace.classList.add('link-dark');
+            enlace.textContent = guia;
+            elemento.appendChild(enlace);
+            break;
+        default:
+            break;
+    }
+}
 
 function renderTable(data) {
     const tbody = document.createElement('tbody');
@@ -51,11 +65,7 @@ function renderTable(data) {
     consultTable.appendChild(tbody);
     data.items.forEach(Element => {
         let row = document.createElement('tr');
-        row.setAttribute('id', Element.OrderId);
-        row.setAttribute('data-bs-toggle', 'modal');
-        row.setAttribute('data-bs-target', '#staticBackdrop');
         tbody.appendChild(row);
-        row.addEventListener('click', renderModal);
 
         //Data
         let OrderId             = document.createElement('td');
@@ -67,7 +77,7 @@ function renderTable(data) {
 
         changeOrderStateColor(Element.Status, Status);
 
-        //Nodes 
+        //Insertamos los elementos creados en la fila
         row.appendChild(OrderId);
         row.appendChild(ClientName);
         row.appendChild(Integration_Date);
@@ -75,12 +85,18 @@ function renderTable(data) {
         row.appendChild(Shipping_Company);
         row.appendChild(Guide_Numer);
  
-        //Data insertion
-        OrderId.innerHTML = Element.OrderId;
+        //Inserción de los datos dentro de las filas
+        OrderId.innerHTML = Element.OrderId;//Le asignamos el valor del elemento
+        OrderId.setAttribute('id', Element.OrderId);//Asignamos un ID para saber la información que se mostrará en el modal
+        OrderId.addEventListener('click', renderModal);//Asignamos el evento que mostrará el modal
+        OrderId.style.cursor = 'pointer';//Le damos estilo de puntero
+        OrderId.setAttribute('data-bs-toggle', 'modal');//Asignamos los valores para que el modal pueda mostrarse
+        OrderId.setAttribute('data-bs-target', '#staticBackdrop');//Asignamos el ID relacionado con el modal que se va a mostrar
+
         ClientName.classList.add('text-start');
         ClientName.innerHTML = Element.ClientName;
         Integration_Date.innerHTML = Element.Integration_Date;
-        Guide_Numer.innerHTML = Element.Guide_Numer;
+        asignarEnlaceTransportadora(Guide_Numer, Element.Shipping_Company, Element.Guide_Numer);
         Shipping_Company.innerHTML = Element.Shipping_Company;
 
     });
