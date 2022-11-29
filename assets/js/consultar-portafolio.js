@@ -5,10 +5,19 @@ const btnPreviousPage = document.getElementById('btn-previous-page');
 const btnNextPage = document.getElementById('btn-next-page');
 const consultInputSearch = document.getElementById('floatingInputSearch');
 
+//Elementos para exportar consultas
+const btnExportar = document.getElementById('btn-exportar');
+
+//Valores por defecto del sitio
 let defaultSize = 25;
 let currentPage = 1;
-let url = `https://luci-data-api-oun4264ida-uc.a.run.app/Portfolio/getPortfolio/Complete?`;
-const URL2 = 'https://luci-data-api-oun4264ida-uc.a.run.app/'
+let currentOrder = 'Description!asc';
+
+//URLs para consumo de la API
+const URL_EXPORT = `https://luci-data-api-oun4264ida-uc.a.run.app/Portfolio/export?`;
+const URL_PORTFOLIO = `https://luci-data-api-oun4264ida-uc.a.run.app/Portfolio/getPortfolio/Complete?`;
+let urlFilter = '';
+
 let authHeaders = new Headers();
 authHeaders.append("Authorization", "Bearer " + ApiKey);
 
@@ -91,13 +100,31 @@ function previousPage() {
 
 function searchFilter() {
     currentPage = 1;
-    url = `${url}&filter=${consultInputSearch.value}`;
+    urlFilter = `${URL_PORTFOLIO}&filter=${consultInputSearch.value}`;
     getData();
+}
+
+async function exportConsult() {
+    let urlUnida = `${URL_EXPORT}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`;
+    console.log(urlUnida);
+    let response = await fetch( urlUnida, {
+        method: "GET",
+        headers: authHeaders
+    });
+
+    let data = await response.blob();
+    if (response.status === 200) {
+        let a = document.createElement("a");
+        let fileNameDate = new Date();
+        a.href = window.URL.createObjectURL(data);
+        a.download = `exported-${fileNameDate.getFullYear()}-${fileNameDate.getMonth()}-${fileNameDate.getDate()}-${fileNameDate.getSeconds()}`;
+        a.click();
+    }
 }
 
 async function getData(){
     clearTable();
-    let response = await fetch( `${url}&page=${currentPage}&size=${defaultSize}`, {
+    let response = await fetch( `${URL_PORTFOLIO}filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`, {
             method: "GET",
             headers: authHeaders
     });
@@ -116,7 +143,9 @@ entries.addEventListener('change', getEntries);
 btnPreviousPage.addEventListener('click', previousPage);
 btnNextPage.addEventListener('click', nextPage);
 //Evento de busqueda por filtro
-consultInputSearch.addEventListener('change', searchFilter); 
+consultInputSearch.addEventListener('change', searchFilter);
+//Evento de exportar
+btnExportar.addEventListener('click', exportConsult);
 
 
 
