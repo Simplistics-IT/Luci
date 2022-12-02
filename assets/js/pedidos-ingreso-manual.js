@@ -24,6 +24,7 @@ const btnSendManualOrder = document.getElementById('btn-agregar-pedido');
 const inputsIngresoManual = document.querySelectorAll('.input-ingreso-manual');
 const inputDireccion = document.querySelectorAll('.direccion');
 const inputProductos = document.getElementsByClassName('producto');
+const campoAlerta = document.getElementById('alerta');
 let dataToSend;
 let concatTipoDoc = "";
 let dataToJson = {
@@ -36,7 +37,17 @@ async function apiConnect(URL, HEADER, METHOD="", BODY = "") {
         method: METHOD,
         headers: HEADER,
         body: BODY
-    }).then( serverResponse => console.log( serverResponse ) );
+    }).then( serverResponse => {
+        if(serverResponse.status === 200) {
+            mensajesDeAlerta('¡Información ingresada correctamente!', 'success', campoAlerta);
+            setTimeout(() => {
+                location.reload();
+            }, 700);
+
+        } else {
+            mensajesDeAlerta('Algo salió mal, revisa los campos faltantes', 'danger', campoAlerta);
+        }
+    } );
 
     return manualFormSend;
 }
@@ -200,7 +211,11 @@ function llenarPortafolio(data) {
     }
 }
 
-
+function mensajesDeAlerta(mensaje, tipo, elementoPadre) {
+    let elementoAlerta = document.createElement('div');
+    elementoAlerta.innerHTML = `<div class="alert alert-${tipo} alert-dismissible" role="alert">${mensaje}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+    elementoPadre.appendChild(elementoAlerta);
+}
 
 async function getCurrentIncrement() {
     let portafolioResponse = await fetch( `${URL}${portafolioId}`, {

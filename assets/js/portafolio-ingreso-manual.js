@@ -11,6 +11,7 @@ const btnSendManualOrder = document.getElementById('btn-agregar-pedido');
 const fileCustom = document.querySelector('.file-custom');
 const invalidImgFeedback = document.querySelector('.invalid-img-feedback');
 const inputsIngresoManual = document.querySelectorAll('.input-ingreso-manual');
+const campoAlerta = document.getElementById('alerta');
 const formData = new FormData();
 let dataToSend = [];
 
@@ -25,12 +26,28 @@ function cargaImagen() {
     }
 }
 
+function mensajesDeAlerta(mensaje, tipo, elementoPadre) {
+    let elementoAlerta = document.createElement('div');
+    elementoAlerta.innerHTML = `<div class="alert alert-${tipo} alert-dismissible" role="alert">${mensaje}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+    elementoPadre.appendChild(elementoAlerta);
+}
+
 async function apiConnect(URL, METHOD, HEADER, BODY) {
     let manualFormSend = await fetch( URL, {
         method: METHOD,
         headers: HEADER,
         body: BODY
-    }).then( serverResponse => console.log( serverResponse ) );
+    }).then( serverResponse => {
+        if(serverResponse.status === 200) {
+            mensajesDeAlerta('¡Información ingresada correctamente!', 'success', campoAlerta);
+            setTimeout(() => {
+                location.reload();
+            }, 700);
+
+        } else {
+            mensajesDeAlerta('Algo salió mal, revisa los campos faltantes', 'danger', campoAlerta);
+        }
+    } );
 }
 
 function sendManualOrder(e) {
