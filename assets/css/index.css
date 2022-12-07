@@ -29,6 +29,20 @@ input[type=number] {
     -moz-appearance:textfield; 
 }
 
+.position-absolute {
+    width: 17rem;
+    z-index: 1000;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .text-main-red {
     color: var(--bg-red-main);
 }
@@ -202,9 +216,6 @@ tbody {
     background: #d4d4d4;
   }
   
-
-
-
 /* Consult Styles */
 
 .form-select-short {
@@ -301,3 +312,4 @@ tbody {
     font-size: .875em;
     color: #dc3545;
 }
+

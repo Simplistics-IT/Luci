@@ -28,7 +28,7 @@ async function subirGuias(URL, form) {
             }, 700);
         } else {
             mensajesDeAlerta('Algo salió mal, revisa los campos faltantes', 'danger', campoAlerta);
-        }
+        }egr
     })
     .then(( respuesta ) => blob = respuesta.blob())
     .then(( resultado ) => {
