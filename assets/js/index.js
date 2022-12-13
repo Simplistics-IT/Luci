@@ -18,6 +18,24 @@ window.addEventListener('DOMContentLoaded', event => {
 
     includeHTML();
     */
+    //Cambio de idioma
+    const selIdiomaEs = document.getElementById('es');//Variable idioma español
+    const selIdiomaEn = document.getElementById('en');//Variable idioma inglés
+    const textChange = document.querySelectorAll('.text-change');
+    const traduccion = {
+        en : {
+            navbar : [
+                'Select language', 'Spanish', 'English','Logout'
+            ],
+            sidebar : [ 
+                'Dashboard', 'Orders', 'Guides', 'Inventory', 'Portfolio', 'Purchases', 'Returns', 'Downloads', 'Settings', 'Support', 'Luci © 2022 All rights reserved Developed by Teclab'
+            ],
+            index : [
+                'Dasboard', 'Welcome to Luci!', 'Quick Access', 'Here you can find some quick access'
+            ],
+
+        }
+    }
 
     //Variables de conexión e información del usuario
     const URL = `https://luci-data-api-oun4264ida-uc.a.run.app/User/getUserInfo`;
@@ -25,6 +43,30 @@ window.addEventListener('DOMContentLoaded', event => {
     let authHeaders = new Headers();
     const userImgProfile = document.getElementById('user-img-profile');
     const userName = document.getElementById('user-name');
+
+    function cambiaIdioma(e) {
+            let idBoton = e.currentTarget.id;
+            switch (idBoton) {
+                case 'es':
+                    cambiaIdiomaEs();
+                    break;
+                case 'en':
+                    cambiaIdiomaEn();
+                    break;
+            }
+
+        
+    }
+
+    function cambiaIdiomaEs(pagina = '') {
+        location.reload();
+    }
+
+    function cambiaIdiomaEn(pagina = '') {
+        textChange.forEach( (texto, index) => {
+            texto.textContent = indexIngles[index];
+        });
+    }
 
     //Función del sidebar
     function showSidebar(btnToggleId, btnIconId, asideWidth, paddingChange) { //Obtenemos los valores de los elementos que se modificaran
@@ -82,6 +124,6 @@ window.addEventListener('DOMContentLoaded', event => {
         userName.textContent = localStorage.getItem('username');
         userImgProfile.setAttribute('src', localStorage.getItem('imgUrl'));
     }
-
-
+    // selIdiomaEn.addEventListener('click', cambiaIdioma);
+    // selIdiomaEs.addEventListener('click', cambiaIdioma);
 });

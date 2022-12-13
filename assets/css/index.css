@@ -313,3 +313,14 @@ tbody {
     color: #dc3545;
 }
 
+/* Menú configuración de usuario */
+
+.btn-idioma {
+    cursor: pointer;
+    transition: 400ms ease;
+}
+
+.btn-idioma:hover {
+    background-color: var(--bg-red-main);
+    color: var(--bg-white);
+}

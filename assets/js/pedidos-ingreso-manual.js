@@ -56,7 +56,7 @@ async function sendManualOrder(e) {
     e.preventDefault();
     let direccion = [];//Array con los datos de la dirección para ser concatenada
     let productosToJson = [];//Array de objetos donde se almacenan los productos
-    let objProducto = {};//Con este objeto almaceno cada producto recibido del formulario y luego lo guardo en el arreglo productosToJson
+    let objProducto = {};//Con este objethttp://127.0.0.1:5500/index.htmlo almaceno cada producto recibido del formulario y luego lo guardo en el arreglo productosToJson
 
     inputDireccion.forEach( (elem, index) => {
         if (elem.value != '' && elem.name != '') {
@@ -132,15 +132,25 @@ async function sendManualOrder(e) {
     dataToJson.Total = String(dataToJson.Total);
     dataToSend = JSON.stringify(dataToJson);
     console.log(dataToJson);
-    apiConnect(`${URL}${createManualOrder}`, authHeaders, 'POST', dataToSend);
-    /*let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
+    // apiConnect(`${URL}${createManualOrder}`, authHeaders, 'POST', dataToSend);
+    let manualFormSend = await fetch( `${URL}${createManualOrder}`, {
         method: "POST",
         headers: {
             "Authorization" : "Bearer " + APIKEY,
             'Content-type' : 'application/json'
         },
         body: dataToSend
-    }).then( serverResponse => console.log( serverResponse ));*/
+    }).then( serverResponse => {
+        if(serverResponse.status === 200) {
+            mensajesDeAlerta('¡Información ingresada correctamente!', 'success', campoAlerta);
+            setTimeout(() => {
+                location.reload();
+            }, 700);
+
+        } else {
+            mensajesDeAlerta('Algo salió mal, revisa los campos faltantes', 'danger', campoAlerta);
+        }
+    });
 }
 
 /* Funciones para la creación de nuevos productos */
