@@ -276,9 +276,15 @@
             <header class="py-4">
                 <div class="d-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
                     <h4>Consultar Inventario</h4>
-                    <button type="button" id="btn-exportar" class="btn btn-success">
-                        <i class="fa-regular fa-file-excel"></i><span class="ms-3">Exportar</span>
-                    </button>
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="form-check form-switch me-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="exportar-por-pagina" checked>
+                            <label class="form-check-label" for="exportar-por-pagina" id="exportar-pagina-texto">Exportar por página</label>
+                        </div>
+                        <button type="button" id="btn-exportar" class="btn btn-success">
+                            <i class="fa-regular fa-file-excel"></i><span class="ms-3">Exportar</span>
+                        </button>
+                      </div>
                 </div>
                 <div class="row">
                     <div class="col-2">

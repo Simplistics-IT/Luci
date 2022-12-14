@@ -7,10 +7,13 @@ const consultInputSearch = document.getElementById('floatingInputSearch');
 
 //Elementos para exportar consultas
 const btnExportar = document.getElementById('btn-exportar');
+const switchExportarPorPagina = document.getElementById('exportar-por-pagina');
+const exportarPorPaginaTexto = document.getElementById('exportar-pagina-texto');
 
 //Valores por defecto del sitio
 let defaultSize = 25;
 let currentPage = 1;
+let exportarPorPagina = true;
 let currentOrder = 'Description!asc';
 
 //URLs para consumo de la API
@@ -104,8 +107,20 @@ function searchFilter() {
     getData();
 }
 
+/* La siguiente es la función para la exportación de datos */
+
+function cambiarTipoDeExportacion() {
+    if(exportarPorPaginaTexto.textContent === 'Exportar por página') {
+        exportarPorPagina = false;
+        exportarPorPaginaTexto.textContent = "Exportar todo";
+    } else {
+        exportarPorPagina = true;
+        exportarPorPaginaTexto.textContent = "Exportar por página";
+    }
+}
+
 async function exportConsult() {
-    let urlUnida = `${URL_EXPORT}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`;
+    let urlUnida = `${URL_EXPORT}per_page=${exportarPorPagina}&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}`;
     console.log(urlUnida);
     let response = await fetch( urlUnida, {
         method: "GET",
@@ -145,6 +160,7 @@ btnNextPage.addEventListener('click', nextPage);
 //Evento de busqueda por filtro
 consultInputSearch.addEventListener('change', searchFilter);
 //Evento de exportar
+switchExportarPorPagina.addEventListener('change', cambiarTipoDeExportacion);
 btnExportar.addEventListener('click', exportConsult);
 
 

@@ -16,10 +16,13 @@ const thStatus = document.getElementById('Status');
 
 //Elementos para exportar consultas
 const btnExportar = document.getElementById('btn-exportar');
+const switchExportarPorPagina = document.getElementById('exportar-por-pagina');
+const exportarPorPaginaTexto = document.getElementById('exportar-pagina-texto');
 
 //Valores por defecto del sitio
 let defaultSize = 25;
 let currentPage = 1;
+let exportarPorPagina = true;
 let currentOrder = 'Integration_Date!desc';
 
 //URLs para consumo de la API
@@ -139,7 +142,7 @@ function nextPage() {
 
 function previousPage() {
     if (currentPage === 2) {
-        btnPreviousPage.classList.add('disabled');
+        btnPreviousPage.classList.add('disabled');//Validamos para desactivar el retroseso en la primera página
         currentPage -= 1;
         getData();
     }
@@ -155,10 +158,20 @@ function searchFilter() {
     getData();
 }//Función para el campo de busqueda
 
-/* Las siguiente es la función para la exportación de datos */
+/* La siguiente es la función para la exportación de datos */
+
+function cambiarTipoDeExportacion() {
+    if(exportarPorPaginaTexto.textContent === 'Exportar por página') {
+        exportarPorPagina = false;
+        exportarPorPaginaTexto.textContent = "Exportar todo";
+    } else {
+        exportarPorPagina = true;
+        exportarPorPaginaTexto.textContent = "Exportar por página";
+    }
+}
 
 async function exportConsult() {
-    let urlUnida = `${URL_EXPORT}per_page=true&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}&order_by=${currentOrder}`;
+    let urlUnida = `${URL_EXPORT}per_page=${exportarPorPagina}&filter=${consultInputSearch.value}&page=${currentPage}&size=${defaultSize}&order_by=${currentOrder}`;
     console.log(urlUnida);
     let response = await fetch( urlUnida, {
         method: "GET",
@@ -302,6 +315,7 @@ thStatus.addEventListener('click', orderByAction);
 //Evento de busqueda por filtro
 consultInputSearch.addEventListener('change', searchFilter);
 //Evento de exportar
+switchExportarPorPagina.addEventListener('change', cambiarTipoDeExportacion);
 btnExportar.addEventListener('click', exportConsult);
 
 
