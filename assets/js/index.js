@@ -19,23 +19,108 @@ window.addEventListener('DOMContentLoaded', event => {
     includeHTML();
     */
     //Cambio de idioma
-    const selIdiomaEs = document.getElementById('es');//Variable idioma español
-    const selIdiomaEn = document.getElementById('en');//Variable idioma inglés
-    const textChange = document.querySelectorAll('.text-change');
     const traduccion = {
         en : {
             navbar : [
-                'Select language', 'Spanish', 'English','Logout'
+                'Select language', 
+                'Spanish', 
+                'English',
+                'Logout'
             ],
             sidebar : [ 
-                'Dashboard', 'Orders', 'Guides', 'Inventory', 'Portfolio', 'Purchases', 'Returns', 'Downloads', 'Settings', 'Support', 'Luci © 2022 All rights reserved Developed by Teclab'
+                'Dashboard', 
+                'Orders', 
+                'Guides', 
+                'Inventory', 
+                'Portfolio', 
+                'Purchases', 
+                'Returns', 
+                'Downloads', 
+                'Settings', 
+                'Support', 
+                'Luci © 2022 All rights reserved', 
+                'Developed by Teclab',
+                'Manual',
+                'Consult',
+                'Import'
             ],
             index : [
-                'Dasboard', 'Welcome to Luci!', 'Quick Access', 'Here you can find some quick access'
+                'Dasboard', 
+                'Welcome to Luci!', 
+                'Quick Access', 
+                'Here you can find some quick access', 
+                'Insert order manually', 
+                'Consult orders', 
+                'Add portfolio manually', 
+                'Consult portfolio', 
+                'Consult Inventory', 
+                'Recent Activity', 
+                'Here you can see your activity', 
+                'There is no activity yet', 
+                'Consult guide', 
+                'Type your guide number to make a quick consult', 
+                'Shopify', 
+                'Luci', 
+                'Programmed', 
+                'Prepared',
+                'This month'
             ],
-
+    
+        },
+        es : {
+            navbar : [
+                'Cambiar idioma', 
+                'Español', 
+                'Inglés',
+                'Cerrar sesión'
+            ],
+            sidebar : [ 
+                'Dashboard', 
+                'Pedidos', 
+                'Guías', 
+                'Inventario', 
+                'Portafolio', 
+                'Compras', 
+                'Devoluciones', 
+                'Descargas', 
+                'Configuración', 
+                'Soporte', 
+                'Luci © 2022 Todos los derechos reservados', 
+                'Desarrollado por Teclab',
+                'Manual',
+                'Consultar',
+                'Importar'
+            ],
+            index : [
+                'Dasboard', 
+                '¡Bienvenido a Luci!', 
+                'Accesos rápidos', 
+                'Aquí puedes encontrar algunos accesos directos', 
+                'Insertar pedido manual', 
+                'Consultar pedidos', 
+                'Ingreso manual de portafolio', 
+                'Consultar portafolio', 
+                'Consultar inventario', 
+                'Actividad Reciente', 
+                'Aquí podrás ver tu actividad', 
+                'Aún no hay ninguna actividad disponible', 
+                'Consultar Guía', 
+                'Ingresa un número de guía para hacer una consulta rápida', 
+                'Shopify', 
+                'Luci', 
+                'Programado', 
+                'Preparados',
+                'Este mes'
+            ],
+    
         }
     }
+    const moduloActual = document.querySelector('body');
+    const selIdiomaEs = document.getElementById('es');//Variable idioma español
+    const selIdiomaEn = document.getElementById('en');//Variable idioma inglés
+    const textChange = document.querySelectorAll('.text-change');
+
+
 
     //Variables de conexión e información del usuario
     const URL = `https://luci-data-api-oun4264ida-uc.a.run.app/User/getUserInfo`;
@@ -51,21 +136,44 @@ window.addEventListener('DOMContentLoaded', event => {
                     cambiaIdiomaEs();
                     break;
                 case 'en':
-                    cambiaIdiomaEn();
+                    cambiaIdiomaEn(moduloActual.id);
                     break;
             }
 
         
     }
 
-    function cambiaIdiomaEs(pagina = '') {
+    function cambiaIdiomaEs() {
         location.reload();
     }
 
-    function cambiaIdiomaEn(pagina = '') {
-        textChange.forEach( (texto, index) => {
-            texto.textContent = indexIngles[index];
+    function cambiaIdiomaEn(pagina) {
+
+        traduccion.es.sidebar.map((elemento, index) => {
+            textChange.forEach( texto => {
+                if(texto.textContent === elemento) {
+                    texto.textContent = traduccion.en.sidebar[index];
+                }
+            });
         });
+
+        traduccion.es.navbar.map((elemento, index) => {
+            textChange.forEach( texto => {
+                if(texto.textContent === elemento) {
+                    texto.textContent = traduccion.en.navbar[index];
+                }
+            });
+        });
+
+        traduccion.es[pagina].map((elemento, index) => {
+            textChange.forEach( texto => {
+                if(texto.textContent === elemento) {
+                    texto.textContent = traduccion.en[pagina][index];
+                }
+            });
+        });
+
+
     }
 
     //Función del sidebar
@@ -124,6 +232,6 @@ window.addEventListener('DOMContentLoaded', event => {
         userName.textContent = localStorage.getItem('username');
         userImgProfile.setAttribute('src', localStorage.getItem('imgUrl'));
     }
-    // selIdiomaEn.addEventListener('click', cambiaIdioma);
-    // selIdiomaEs.addEventListener('click', cambiaIdioma);
+    selIdiomaEn.addEventListener('click', cambiaIdioma);
+    selIdiomaEs.addEventListener('click', cambiaIdioma);
 });

@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="assets/css/navbar.css">
         <link rel="stylesheet" href="assets/css/sidebars.css">
     </head>
-    <body>
+    <body id="index">
         <aside class="aside fixed-top" id="sidebar">
             <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
                 <a href="/" class="d-flex align-items-center link-dark text-decoration-none">
@@ -199,11 +199,11 @@
                     </a>
                     </li>
                 </ul>
-                <p class="text-main-red text-change">
-                    Luci © 2022 Todos los derechos reservados
+                <p class="text-main-red">
+                    <span class="text-change">Luci © 2022 Todos los derechos reservados</span>
                 </p>
-                <p class="text-main-red text-change">
-                    Desarrollado por Teclab <i class="fa-regular fa-heart "></i>
+                <p class="text-main-red">
+                    <span class="text-change me-2">Desarrollado por Teclab</span><i class="fa-regular fa-heart "></i>
                 </p>
             </nav>
         </aside>
@@ -278,19 +278,19 @@
                             <p class="card-text text-change">Aquí puedes encontrar algunos accesos directos</p>
                             <ul class="nav flex-column text-start mt-4">
                                 <li class="nav-link">
-                                    <a class="link-main-black text-decoration-none link-dark text-change" href="modulos/pedidos/ingreso-manual.html"><i class="bi bi-cart-plus icon me-1"></i> Insertar pedido manual</a>
+                                    <a id="prueba" class="link-main-black text-decoration-none link-dark" href="modulos/pedidos/ingreso-manual.html"><i class="bi bi-cart-plus icon me-2"></i><span class="text-change">Insertar pedido manual</span></a>
                                 </li>
                                 <li class="nav-link">
-                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/pedidos/consultar.html"><i class="bi bi-bag-check icon me-1"></i> Consultar pedidos</a>
+                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/pedidos/consultar.html"><i class="bi bi-bag-check icon me-2"></i><span class="text-change">Consultar pedidos</span></a>
                                 </li>
                                 <li class="nav-link">
-                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/pedidos/asignar-guias.html"><i class="bi bi-journal-plus icon me-1"></i> Asignar guías</a>
+                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/portafolio/ingreso-manual.html"><i class="bi bi-cart-plus icon me-2"></i><span class="text-change">Ingreso manual de portafolio</span></a>
                                 </li>
                                 <li class="nav-link">
-                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/inventario/consultar.html"><i class="bi bi-inboxes icon me-1"></i> Consultar inventario</a>
+                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/portafolio/consultar.html"><i class="bi bi-briefcase icon me-2"></i><span class="text-change">Consultar portafolio</span></a>
                                 </li>
                                 <li class="nav-link">
-                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/portafolio/consultar.html"><i class="bi bi-briefcase icon me-1"></i> Consultar portafolio</a>
+                                    <a class="link-main-black text-decoration-none link-dark" href="modulos/inventario/consultar.html"><i class="bi bi-inboxes icon me-2"></i><span class="text-change">Consultar inventario</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -299,17 +299,17 @@
                 <div class="col-4">
                     <div class="card card-dashboard shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title text-main-red">Actividad Reciente</h5>
-                            <p class="card-text">Aquí puedes encontrar algunos accesos directos</p>
-                            <p class="text-center mt-5 text-muted">Aún no hay ninguna actividad disponible</p>
+                            <h5 class="card-title text-main-red text-change">Actividad Reciente</h5>
+                            <p class="card-text text-change">Aquí puedes encontrar algunos accesos directos</p>
+                            <p class="text-center mt-5 text-muted text-change">Aún no hay ninguna actividad disponible</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card card-dashboard shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title text-main-red">Consultar Guía</h5>
-                            <p class="card-text">Ingresa un número de guía para hacer una consulta rápida</p>
+                            <h5 class="card-title text-main-red text-change">Consultar Guía</h5>
+                            <p class="card-text text-change">Ingresa un número de guía para hacer una consulta rápida</p>
                             <div>
                                 <div class="input-group mt-3">
                                   <input type="text" class="form-control" id="floatingInputSearch" placeholder="" autocomplete="off">
@@ -326,36 +326,36 @@
                 <div class="col-3">
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Shopify</h5>
+                          <h5 class="card-title text-change">Shopify</h5>
                           <p class="card-subtitle mb-2 text-muted" id="shopify-orders">0</p>
-                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
+                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i><span class="ms-2 text-change">Este mes</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Luci</h5>
+                          <h5 class="card-title text-change">Luci</h5>
                           <h6 class="card-subtitle mb-2 text-muted" id="luci-orders">0</h6>
-                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
+                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i><span class="ms-2 text-change">Este mes</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Programado</h5>
+                          <h5 class="card-title text-change">Programado</h5>
                           <h6 class="card-subtitle mb-2 text-muted" id="programmed-orders">0</h6>
-                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
+                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i><span class="ms-2 text-change">Este mes</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Preparados</h5>
+                          <h5 class="card-title text-change">Preparados</h5>
                           <h6 class="card-subtitle mb-2 text-muted" id="prepared-orders">0</h6>
-                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i> Este mes</p>
+                          <p class="card-text"><i class="fa-sharp fa-solid fa-arrow-up text-main-green"></i><span class="ms-2 text-change">Este mes</span></p>
                         </div>
                     </div>
                 </div>
