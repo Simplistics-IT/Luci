@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../../assets/css/navbar.css">
     <link rel="stylesheet" href="../../assets/css/sidebars.css">
 </head>
-<body>
+<body id="consultPortfolio">
     <aside class="aside fixed-top" id="sidebar">
         <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
             <a href="/" class="d-flex align-items-center link-dark text-decoration-none">
@@ -36,32 +36,32 @@
                 </a>
             </a>
             <hr>
-            <p class="fs-6 text-muted text-uppercase hide-text">General</p>
+            <p class="fs-6 text-muted text-uppercase hide-text text-change">General</p>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
                     <a href="../../../index.html" class="nav-link link-dark align-middle link-hover px-2" aria-current="page">
                         <i class="bi bi-speedometer2 icon me-2"></i>
-                        <span class="hide-text">Dashboard</span>
+                        <span class="hide-text text-change">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-pedidos" aria-expanded="false" aria-controls="collapse-pedidos">
                         <div class="accordion-btn-title">
                             <i class="bi bi-cart-plus icon me-2"></i>
-                            <span class="hide-text">Pedidos</span>
+                            <span class="hide-text text-change">Pedidos</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-pedidos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
                             </li>
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/consultar.html">Consultar</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/consultar.html">Consultar</a>
                             </li>
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/importar.html">Importar</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/importar.html">Importar</a>
                             </li>
                         </ul>
                     </div>
@@ -70,14 +70,14 @@
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-inventario" aria-expanded="false" aria-controls="collapse-inventario">
                     <div class="accordion-btn-title">
                         <i class="bi bi-inboxes icon me-2"></i>
-                        <span class="hide-text">Inventario</span>
+                        <span class="hide-text text-change">Inventario</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-inventario" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/inventario/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/inventario/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -86,20 +86,20 @@
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-portafolio" aria-expanded="false" aria-controls="collapse-portafolio">
                     <div class="accordion-btn-title">
                         <i class="bi bi-briefcase icon me-2"></i>
-                        <span class="hide-text">Portafolio</span>
+                        <span class="hide-text text-change">Portafolio</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-portafolio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/consultar.html">Consultar</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/consultar.html">Consultar</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/importar.html">Importar</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/importar.html">Importar</a>
                         </li>
                     </ul>
                 </div>
@@ -108,14 +108,14 @@
                     <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-guias" aria-expanded="false" aria-controls="collapse-guias">
                         <div class="accordion-btn-title">
                             <i class="text-muted bi bi-bookmark-plus icon me-2"></i>
-                            <span class="hide-text">Guías</span>
+                            <span class="hide-text text-change">Guías</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-guias" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/guias/asignar-guias.html">Asignar Guías</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/guias/asignar-guias.html">Asignar Guías</a>
                             </li>
                         </ul>
                     </div>
@@ -124,17 +124,17 @@
                 <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
                     <div class="accordion-btn-title">
                         <i class="text-muted bi bi-shop icon me-2"></i>
-                        <span class="hide-text">Compras</span>
+                        <span class="hide-text text-change">Compras</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-compras" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/compras/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/compras/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -143,17 +143,17 @@
                 <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
                     <div class="accordion-btn-title">
                         <i class="text-muted bi bi-arrow-clockwise icon me-2"></i>
-                        <span class="hide-text">Devoluciones</span>
+                        <span class="hide-text text-change">Devoluciones</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-devoluciones" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/devoluciones/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -162,43 +162,43 @@
                     <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
                         <div class="accordion-btn-title">
                             <i class="bi bi-cloud-download text-muted icon me-2"></i>
-                            <span class="hide-text">Descargas</span>
+                            <span class="hide-text text-change">Descargas</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
                         </li>
                         </ul>
                     </div>
                 </li>
             </ul>
             <hr>
-            <p class="fs-6 text-muted text-uppercase hide-text">Ayuda</p>
+            <p class="fs-6 text-muted text-uppercase hide-text text-change">Ayuda</p>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-config" aria-expanded="false" aria-controls="collapse-config">
                     <div class="accordion-btn-title">
                         <i class="bi bi-gear icon me-2"></i>
-                        <span class="hide-text">Configuración</span>
+                        <span class="hide-text text-change">Configuración</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-config" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/estados.html">Estados</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/estados.html">Estados</a>
                     </li>
                     </ul>
                 </div>
@@ -206,15 +206,15 @@
                 <li>
                 <a href="https://teclab.com.co/help/?nombre=JUAN%20URIBE&telefono=3217662040&get_link=luci" class="nav-link link-dark align-middle link-hover px-2">
                     <i class="bi bi-megaphone icon me-2"></i>
-                    <span class="hide-text">Soporte</span>
+                    <span class="hide-text text-change">Soporte</span>
                 </a>
                 </li>
             </ul>
             <p class="text-main-red">
-                Luci © 2022 Todos los derechos reservados
+                <span class="text-change">Luci © 2022 Todos los derechos reservados</span>
             </p>
             <p class="text-main-red">
-                Desarrollado por Teclab <i class="fa-regular fa-heart "></i>
+                <span class="text-change me-2">Desarrollado por Teclab</span><i class="fa-regular fa-heart "></i>
             </p>
         </nav>
     </aside>
@@ -245,18 +245,18 @@
                             <h2 class="accordion-header" id="btn-config-idioma">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menu-config-idioma" aria-expanded="true" aria-controls="menu-config-idioma">
                                     <i class="bi bi-globe me-2"></i>
-                                    <span>Cambiar idioma</span>
+                                    <span class="text-change">Cambiar idioma</span>
                                 </button>
                             </h2>
-                            <div id="menu-config-idioma" class="accordion-collapse collapse show ps-3" aria-labelledby="btn-config-idioma" data-bs-parent="#accordionExample">
+                            <div id="menu-config-idioma" class="accordion-collapse collapse show" aria-labelledby="btn-config-idioma" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <div class="d-flex align-items-center mb-2">
+                                    <div id="es" class="d-flex align-items-center btn-idioma p-1 mb-2">
                                         <img src="../../assets/img/bandera-es.svg" class="bandera-icon" alt="Bandera España">
-                                        <span class="ms-2">Español</span>
+                                        <span class="ms-2 text-change">Español</span>
                                     </div>
-                                    <div class="d-flex align-items-center">
+                                    <div id="en" class="d-flex align-items-center btn-idioma p-1">
                                         <img src="../../assets/img/bandera-en.svg" class="bandera-icon" alt="Bandera USA">
-                                        <span class="ms-2">Inglés</span>
+                                        <span class="ms-2 text-change">Inglés</span>
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +264,7 @@
                         <div class="accordion-item">
                             <button type="button" class="btn btn-logout" id="btn-logout">
                                 <i class="bi bi-box-arrow-left mx-1"></i>
-                                <span>Cerrar sesión</span>
+                                <span class="text-change">Cerrar sesión</span>
                             </button>
                         </div>
                     </div>
@@ -276,17 +276,17 @@
             <section class="container-fluid px-5">
                 <header class="py-4">
                     <div class="d-flex align-items-center justify-content-between border-bottom mb-3 pb-3">
-                        <h4>Consultar Portafolio</h4>
+                        <h4 class="text-change">Consultar Portafolio</h4>
                         <div class="d-flex flex-row align-items-center">
                             <div class="form-check form-switch me-3">
                                 <input class="form-check-input" type="checkbox" role="switch" id="exportar-por-pagina" checked>
-                                <label class="form-check-label" for="exportar-por-pagina" id="exportar-pagina-texto">Exportar por página</label>
+                                <label class="text-change form-check-label" for="exportar-por-pagina" id="exportar-pagina-texto">Exportar por página</label>
                             </div>
                             <button type="button" id="btn-exportar" class="btn btn-success me-3">
-                                <i class="fa-regular fa-file-excel"></i><span class="ms-3">Exportar</span>
+                                <i class="fa-regular fa-file-excel"></i><span class="text-change ms-3">Exportar</span>
                             </button>
                             <button type="button" class="btn btn-danger">
-                                <i class="fa-solid fa-qrcode"></i><span class="ms-3">Códigos</span>
+                                <i class="fa-solid fa-qrcode"></i><span class="text-change ms-3">Códigos</span>
                             </button>
                         </div>
                     </div>
@@ -300,14 +300,14 @@
                             </div>
                         </div>
                         <div class="col-3 d-flex align-items-center">
-                            <span>Mostrar</span>
+                            <span class="text-change">Mostrar</span>
                             <select class="form-select-short" name="entradas-consulta" id="entradas-consulta">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </select>
-                            <span>Entradas</span>
+                            <span class="text-change">Entradas</span>
                         </div>
                     </div>
                 </header>
@@ -315,11 +315,11 @@
                     <table id="tabla-consulta" class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Producto</th>
-                                <th scope="col">SKU</th>
-                                <th scope="col">EAN / Barcode</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Estado</th>
+                                <th class="text-change" scope="col">Producto</th>
+                                <th class="text-change" scope="col">SKU</th>
+                                <th class="text-change" scope="col">EAN / Barcode</th>
+                                <th class="text-change" scope="col">Descripción</th>
+                                <th class="text-change" scope="col">Estado</th>
                             </tr>
                         </thead>
                     </table>

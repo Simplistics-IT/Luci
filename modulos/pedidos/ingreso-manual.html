@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="../../assets/css/navbar.css">
         <link rel="stylesheet" href="../../assets/css/sidebars.css">
     </head>
-<body>
+<body id="manualOrders">
     <aside class="aside fixed-top" id="sidebar">
         <nav id="nav-bar" class="nav-sidebar-left width-change accordion d-flex flex-column flex-shrink-0 pt-2 pb-4 px-3 bg-light" id="sidenavAccordion">
             <a href="/" class="d-flex align-items-center link-dark text-decoration-none">
@@ -36,32 +36,32 @@
                 </a>
             </a>
             <hr>
-            <p class="fs-6 text-muted text-uppercase hide-text">General</p>
+            <p class="fs-6 text-muted text-uppercase hide-text text-change">General</p>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
                     <a href="../../../index.html" class="nav-link link-dark align-middle link-hover px-2" aria-current="page">
                         <i class="bi bi-speedometer2 icon me-2"></i>
-                        <span class="hide-text">Dashboard</span>
+                        <span class="hide-text text-change">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-pedidos" aria-expanded="false" aria-controls="collapse-pedidos">
                         <div class="accordion-btn-title">
                             <i class="bi bi-cart-plus icon me-2"></i>
-                            <span class="hide-text">Pedidos</span>
+                            <span class="hide-text text-change">Pedidos</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-pedidos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/ingreso-manual.html">Manual</a>
                             </li>
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/consultar.html">Consultar</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/consultar.html">Consultar</a>
                             </li>
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/pedidos/importar.html">Importar</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/pedidos/importar.html">Importar</a>
                             </li>
                         </ul>
                     </div>
@@ -70,14 +70,14 @@
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-inventario" aria-expanded="false" aria-controls="collapse-inventario">
                     <div class="accordion-btn-title">
                         <i class="bi bi-inboxes icon me-2"></i>
-                        <span class="hide-text">Inventario</span>
+                        <span class="hide-text text-change">Inventario</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-inventario" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/inventario/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/inventario/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -86,20 +86,20 @@
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-portafolio" aria-expanded="false" aria-controls="collapse-portafolio">
                     <div class="accordion-btn-title">
                         <i class="bi bi-briefcase icon me-2"></i>
-                        <span class="hide-text">Portafolio</span>
+                        <span class="hide-text text-change">Portafolio</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-portafolio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/consultar.html">Consultar</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/consultar.html">Consultar</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/ingreso-manual.html">Manual</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/portafolio/importar.html">Importar</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/portafolio/importar.html">Importar</a>
                         </li>
                     </ul>
                 </div>
@@ -108,14 +108,14 @@
                     <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-guias" aria-expanded="false" aria-controls="collapse-guias">
                         <div class="accordion-btn-title">
                             <i class="text-muted bi bi-bookmark-plus icon me-2"></i>
-                            <span class="hide-text">Guías</span>
+                            <span class="hide-text text-change">Guías</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-guias" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                             <li>
-                                <a class="nav-link link-dark link-hover" href="../../modulos/guias/asignar-guias.html">Asignar Guías</a>
+                                <a class="nav-link link-dark link-hover text-change" href="../../modulos/guias/asignar-guias.html">Asignar Guías</a>
                             </li>
                         </ul>
                     </div>
@@ -124,17 +124,17 @@
                 <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-compras" aria-expanded="false" aria-controls="collapse-compras">
                     <div class="accordion-btn-title">
                         <i class="text-muted bi bi-shop icon me-2"></i>
-                        <span class="hide-text">Compras</span>
+                        <span class="hide-text text-change">Compras</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-compras" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/compras/emitir-ordenes.html">Emitir ordenes de compra</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/compras/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/compras/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -143,17 +143,17 @@
                 <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-devoluciones" aria-expanded="false" aria-controls="collapse-devoluciones">
                     <div class="accordion-btn-title">
                         <i class="text-muted bi bi-arrow-clockwise icon me-2"></i>
-                        <span class="hide-text">Devoluciones</span>
+                        <span class="hide-text text-change">Devoluciones</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-devoluciones" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/devoluciones/ingresar.html">Ingresar</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/devoluciones/consultar.html">Consultar</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/devoluciones/consultar.html">Consultar</a>
                     </li>
                     </ul>
                 </div>
@@ -162,43 +162,43 @@
                     <a href="#" class="disabled nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-descargas" aria-expanded="false" aria-controls="collapse-descargas">
                         <div class="accordion-btn-title">
                             <i class="bi bi-cloud-download text-muted icon me-2"></i>
-                            <span class="hide-text">Descargas</span>
+                            <span class="hide-text text-change">Descargas</span>
                         </div>
                         <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                     </a>
                     <div class="accordion-collapse collapse" id="collapse-descargas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <ul class="nav flex-column ms-5">
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/descargas/descargar-plantilla.html">Descargar Plantillas</a>
                         </li>
                         <li>
-                            <a class="nav-link link-dark link-hover" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
+                            <a class="nav-link link-dark link-hover text-change" href="../../modulos/descargas/descargar-documento.html">Descargar Documentos</a>
                         </li>
                         </ul>
                     </div>
                 </li>
             </ul>
             <hr>
-            <p class="fs-6 text-muted text-uppercase hide-text">Ayuda</p>
+            <p class="fs-6 text-muted text-uppercase hide-text text-change">Ayuda</p>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                 <a href="#" class="nav-link accordion-btn-style collapsed link-dark align-middle link-hover px-2" data-bs-toggle="collapse" data-bs-target="#collapse-config" aria-expanded="false" aria-controls="collapse-config">
                     <div class="accordion-btn-title">
                         <i class="bi bi-gear icon me-2"></i>
-                        <span class="hide-text">Configuración</span>
+                        <span class="hide-text text-change">Configuración</span>
                     </div>
                     <i class="fas fa-angle-down accordion-btn-arrow hide-text"></i>
                 </a>
                 <div class="accordion-collapse collapse" id="collapse-config" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <ul class="nav flex-column ms-5">
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/registrar-usuario.html">Registrar Usuario</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/registrar-cliente.html">Registrar Cliente</a>
                     </li>
                     <li>
-                        <a class="nav-link link-dark link-hover" href="../../modulos/configuracion/estados.html">Estados</a>
+                        <a class="nav-link link-dark link-hover text-change" href="../../modulos/configuracion/estados.html">Estados</a>
                     </li>
                     </ul>
                 </div>
@@ -206,15 +206,15 @@
                 <li>
                 <a href="https://teclab.com.co/help/?nombre=JUAN%20URIBE&telefono=3217662040&get_link=luci" class="nav-link link-dark align-middle link-hover px-2">
                     <i class="bi bi-megaphone icon me-2"></i>
-                    <span class="hide-text">Soporte</span>
+                    <span class="hide-text text-change">Soporte</span>
                 </a>
                 </li>
             </ul>
             <p class="text-main-red">
-                Luci © 2022 Todos los derechos reservados
+                <span class="text-change">Luci © 2022 Todos los derechos reservados</span>
             </p>
             <p class="text-main-red">
-                Desarrollado por Teclab <i class="fa-regular fa-heart "></i>
+                <span class="text-change me-2">Desarrollado por Teclab</span><i class="fa-regular fa-heart "></i>
             </p>
         </nav>
     </aside>
@@ -245,18 +245,18 @@
                             <h2 class="accordion-header" id="btn-config-idioma">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menu-config-idioma" aria-expanded="true" aria-controls="menu-config-idioma">
                                     <i class="bi bi-globe me-2"></i>
-                                    <span>Cambiar idioma</span>
+                                    <span class="text-change">Cambiar idioma</span>
                                 </button>
                             </h2>
-                            <div id="menu-config-idioma" class="accordion-collapse collapse show ps-3" aria-labelledby="btn-config-idioma" data-bs-parent="#accordionExample">
+                            <div id="menu-config-idioma" class="accordion-collapse collapse show" aria-labelledby="btn-config-idioma" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <div class="d-flex align-items-center mb-2">
+                                    <div id="es" class="d-flex align-items-center btn-idioma p-1 mb-2">
                                         <img src="../../assets/img/bandera-es.svg" class="bandera-icon" alt="Bandera España">
-                                        <span class="ms-2">Español</span>
+                                        <span class="ms-2 text-change">Español</span>
                                     </div>
-                                    <div class="d-flex align-items-center">
+                                    <div id="en" class="d-flex align-items-center btn-idioma p-1">
                                         <img src="../../assets/img/bandera-en.svg" class="bandera-icon" alt="Bandera USA">
-                                        <span class="ms-2">Inglés</span>
+                                        <span class="ms-2 text-change">Inglés</span>
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +264,7 @@
                         <div class="accordion-item">
                             <button type="button" class="btn btn-logout" id="btn-logout">
                                 <i class="bi bi-box-arrow-left mx-1"></i>
-                                <span>Cerrar sesión</span>
+                                <span class="text-change">Cerrar sesión</span>
                             </button>
                         </div>
                     </div>
@@ -276,106 +276,103 @@
     <main class="main padding-base pb-4">
         <section class="container-fluid px-5">
             <header class="header py-3 border-bottom">
-                <h2>Ingreso Manual</h2>
+                <h2 class="text-change">Ingreso Manual</h2>
             </header>
             <form id="form-ingreso-manual" class="pt-3">
                 <fieldset class="mb-3">
                     <legend>
-                        <p>Información del Cliente</p>
+                        <p class="text-change">Información del Cliente</p>
                     </legend>
                     <div class="row mb-3">
                         <div class="form-floating col-2">
                             <input type="text" class="form-control input-ingreso-manual" id="input-numero-orden" name="OrderNumber" placeholder="Número de orden" required>
-                            <label class="ms-3" for="input-numero-orden">No. Orden <span class="text-danger">*</span></label>
-                            <div class="valid-feedback">
-                                Correcto
-                            </div>
+                            <label class="ms-3" for="input-numero-orden"><span class="text-change">No. Orden</span> <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-3">
                             <input type="text" class="form-control input-ingreso-manual" name="ClientName" placeholder="Nombre del cliente" required>
-                            <label class="ms-3" for="ClientName">Nombre del cliente <span class="text-danger">*</span></label>
+                            <label class="ms-3" for="ClientName"><span class="text-change">Nombre del cliente</span> <span class="text-danger">*</span></label>
                         </div>
                         <div class="col-5">
                             <div class="input-group input-group-styles">
                                 <label class="input-group-text" for="ClientID">C.C. o NIT <span class="text-danger">*</span></label>
                                 <select class="form-control input-ingreso-manual" name="tipo-doc-cliente" id="tipo-doc-cliente">
-                                    <option value="">Tipo de documento</option>
-                                    <option value="CC">Cédula ciudadanía</option>
-                                    <option value="CE">Cédula extranjería</option>
-                                    <option value="NIT">NIT</option>
-                                    <option value="PA">Pasaporte</option>
+                                    <option class="text-change" value="">Tipo de documento</option>
+                                    <option class="text-change" value="CC">Cédula ciudadanía</option>
+                                    <option class="text-change" value="CE">Cédula extranjería</option>
+                                    <option class="text-change" value="NIT">NIT</option>
+                                    <option class="text-change" value="PA">Pasaporte</option>
                                 </select>
-                                <input type="number" class="form-control input-ingreso-manual" name="ClientID" placeholder="No. de documento" required>
+                                <input type="number" class="form-control input-ingreso-manual" name="ClientID" placeholder="1000123456" required>
                             </div>
                         </div>
                         <div class="form-floating col-2">
                             <input type="number" class="form-control input-ingreso-manual" name="PhoneNumber" placeholder="ID del Cliente" required>
-                            <label class="ms-3" sfor="PhoneNumber">Teléfono <span class="text-danger">*</span></label>
+                            <label class="ms-3" sfor="PhoneNumber"><span class="text-change">Teléfono</span> <span class="text-danger">*</span></label>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="form-floating col-4">
                             <input type="email" class="form-control input-ingreso-manual" name="Email" placeholder="Correo electrónico">
-                            <label class="ms-3" for="Email">Correo electrónico</label>
+                            <label class="text-change ms-3" for="Email">Correo electrónico</label>
                         </div>
                         <div class="form-floating col-4">
                             <select type="text" class="form-control input-ingreso-manual" id="Department" name="Department" required>
-                                <option value="">Seleccione un departamento</option>
+                                <option class="text-change" value="">Seleccione un departamento</option>
                             </select>
-                            <label class="ms-3" for="Department">Departamento <span class="text-danger">*</span></label>
+                            <label class="text-change ms-3" for="Department"><span class="text-change">Departamento</span> <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-4">
                             <select type="text" class="form-control input-ingreso-manual" id="City" name="City" required>
-                                <option value="">Seleccione una ciudad</option>
+                                <option class="text-change" value="">Seleccione una ciudad</option>
                             </select>
-                            <label class="ms-3" for="City">Ciudad <span class="text-danger">*</span></label>
+                            <label class="ms-3" for="City"><span class="text-change">Ciudad</span> <span class="text-danger">*</span></label>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="input-group">
-                                <label for="direccion" class="input-group-text">Dirección<span class="text-danger">*</span></label>
+                                <label for="direccion" class="input-group-text"><span class="text-change">Dirección</span> <span class="text-danger">*</span></label>
                                 <select type="text" class="form-control direccion" name="via" required>
-                                    <option value="">Tipo de vía</option>
-                                    <option value="cra">Carrera</option>
-                                    <option value="cl">Calle</option>
-                                    <option value="av">Avenida</option>
-                                    <option value="circular">Circular</option>
-                                    <option value="diagonal">Diagonal</option>
-                                    <option value="transversal">Transversal</option>
-                                    <option value="autopista">Autopista</option>
-                                    <option value="avenida calle">Avenida Calle</option>
-                                    <option value="avenida carrera">Avenida Carrera</option>
-                                    <option value="zona">Zona</option>
+                                    <option class="text-change" value="">Tipo de vía</option>
+                                    <option class="text-change" value="cra">Carrera</option>
+                                    <option class="text-change" value="cl">Calle</option>
+                                    <option class="text-change" value="av">Avenida</option>
+                                    <option class="text-change" value="circular">Circular</option>
+                                    <option class="text-change" value="diagonal">Diagonal</option>
+                                    <option class="text-change" value="transversal">Transversal</option>
+                                    <option class="text-change" value="autopista">Autopista</option>
+                                    <option class="text-change" value="avenida calle">Avenida Calle</option>
+                                    <option class="text-change" value="avenida carrera">Avenida Carrera</option>
+                                    <option class="text-change" value="zona">Zona</option>
                                 </select>
-                                <input type="text" class="form-control direccion" id="numeroCalle" name="numero" placeholder="número" required>
+                                <input type="text" class="form-control direccion" id="numeroCalle" name="numero" placeholder="26" required>
                                 <span class="input-group-text">#</span>
-                                <input type="text" class="form-control direccion" name="numero" placeholder="número" required>
+                                <input type="text" class="form-control direccion" name="numero" placeholder="20" required>
                                 <span class="input-group-text">-</span>
-                                <input type="number" class="form-control direccion" name="numero" placeholder="número" required>
+                                <input type="number" class="form-control direccion" name="numero" placeholder="41" required>
                                 <select type="text" class="form-control direccion" name="final" required>
-                                    <option value="">Tipo de residencia</option>
-                                    <option value="apto">Apartamento</option>
-                                    <option value="int">Interior</option>
-                                    <option value="manzana">Manzana</option>
-                                    <option value="zona">Zona</option>
-                                    <option value="bloque">Bloque</option>
-                                    <option value="habitacion">Habitación</option>
+                                    <option class="text-change" value="">Tipo de residencia</option>
+                                    <option class="text-change" value="apto">Apartamento</option>
+                                    <option class="text-change" value="int">Interior</option>
+                                    <option class="text-change" value="manzana">Manzana</option>
+                                    <option class="text-change" value="zona">Zona</option>
+                                    <option class="text-change" value="bloque">Bloque</option>
+                                    <option class="text-change" value="habitacion">Habitación</option>
                                 </select>
-                                <input type="number" class="form-control direccion" name="numero" placeholder="número" required>
+                                <input type="number" class="form-control direccion" name="numero" placeholder="101" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-floating col-12">
                             <textarea class="form-control input-ingreso-manual" id="notas-direccion" name="Address_Notes" cols="12" rows="20"></textarea>
-                            <label for="Address_Notes" class="ms-3">Notas de dirección</label>
+                            <label for="Address_Notes" class="text-change ms-3">Notas de dirección</label>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset class="mb-3">
                     <legend>
-                        <p>Productos</p>
+                        <p class="text-change">Productos</p>
                     </legend>
                     <div id="lista-productos">
                         <div class="row d-flex align-items-center mb-2" id="producto-1">
@@ -383,15 +380,15 @@
                                 <input class="form-control producto" list="portafolio-opciones" id="SKU" name="SKU" placeholder="Nombre de producto" autocomplete="off" required>
                                 <datalist id="portafolio-opciones">
                                 </datalist>
-                                <label for="SKU" class="ms-3">Nombre de producto <span class="text-danger">*</span></label>
+                                <label for="SKU" class="ms-3"><span class="text-change">Nombre de producto</span> <span class="text-danger">*</span></label>
                             </div> 
                             <div class="form-floating col-3">
                                 <input type="number" class="form-control producto" id="Quantity" name="Quantity" placeholder="Cantidad" min="0" required>
-                                <label for="Quantity" class="ms-3">Cantidad <span class="text-danger">*</span></label>
+                                <label for="Quantity" class="ms-3"><span class="text-change">Cantidad</span> <span class="text-danger">*</span></label>
                             </div>    
                             <div class="form-floating col-3">
                                 <input type="number" class="form-control producto" id="UnitPrice" name="UnitPrice" placeholder="Precio" required>
-                                <label for="UnitPrice" class="ms-3">Precio (Unitario) <span class="text-danger">*</span></label>
+                                <label for="UnitPrice" class="ms-3"><span class="text-change">Precio (Unitario)</span> <span class="text-danger">*</span></label>
                             </div>
                             <div class="col-1">
                                 <button type="button" class="btn btn-outline-danger btn-lg disabled">
@@ -401,30 +398,30 @@
                         </div>
                     </div>
                     <button type="button" id="btn-agregar-producto" class="btn btn-lg btn-success mt-3">
-                        <span>Agregar Producto</span>
+                        <span class="text-change">Agregar Producto</span>
                         <i class="fas fa-plus-circle"></i>
                     </button>
                 </fieldset>
                 <fieldset class="mb-3">
-                    <legend>Detalles del envío</legend>
+                    <legend class="text-change">Detalles del envío</legend>
                     <div class="row mb-3">
                         <div class="form-floating col-6">
                             <select type="text" class="form-control input-ingreso-manual" maxlength="15" name="ShipmentOption" required>
-                                <option value="">Seleccione una opción de envío</option>
-                                <option value="1">Domicilios Simplistics Urbano</option> 
-                                <option value="2">Domicilios Simplistics Nacional</option>
-                                <option value="3">Envío internacional</option>
-                                <option value="4">Recoger en Bodega</option> 
+                                <option class="text-change" value="">Seleccione una opción de envío</option>
+                                <option class="text-change" value="1">Domicilios Simplistics Urbano</option> 
+                                <option class="text-change" value="2">Domicilios Simplistics Nacional</option>
+                                <option class="text-change" value="3">Envío internacional</option>
+                                <option class="text-change" value="4">Recoger en Bodega</option> 
                             </select>
-                            <label for="ShipmentOption" class="ms-3">Opción de envío <span class="text-danger">*</span></label>
+                            <label for="ShipmentOption" class="text-change ms-3">Opción de envío <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-floating col-6">
                             <select type="text" class="form-control input-ingreso-manual" maxlength="15" name="RequireCollection" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="no">No</option>
-                                <option value="si">Sí</option>
+                                <option class="text-change" value="">Seleccione una opción</option>
+                                <option class="text-change" value="no">No</option>
+                                <option class="text-change" value="si">Sí</option>
                             </select>
-                            <label for="RequireCollection" class="ms-3">Requiere recaudo <span class="text-danger">*</span></label>
+                            <label for="RequireCollection" class="ms-3"><span class="text-change">Requiere recaudo</span> <span class="text-danger">*</span></label>
                         </div>
                     </div>
                     <div class="row">
@@ -433,7 +430,7 @@
                     </div>
                 </fieldset>
                 <button type="submit" name="btn-agregar-pedido" class="btn btn-primary btn-lg" id="btn-agregar-pedido">
-                    <span>Ingresar</span>
+                    <span class="text-change">Ingresar</span>
                     <i class="bi bi-arrow-right-circle"></i>
                 </button>
             </form>

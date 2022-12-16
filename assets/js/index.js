@@ -1,6 +1,5 @@
 /* Archivo principal del proyecto */
 window.addEventListener('DOMContentLoaded', event => {
-
     //Variables para añadir el sidebar y el navbar
 
     /*const navbar = document.getElementById("navbar");
@@ -36,7 +35,10 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Purchases', 
                 'Returns', 
                 'Downloads', 
-                'Settings', 
+                'Settings',
+                'Register User',
+                'Register Client',
+                'States',
                 'Support', 
                 'Luci © 2022 All rights reserved', 
                 'Developed by Teclab',
@@ -44,7 +46,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Consult',
                 'Import'
             ],
-            index : [
+            dashboard : [
                 'Dasboard', 
                 'Welcome to Luci!', 
                 'Quick Access', 
@@ -65,6 +67,112 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Prepared',
                 'This month'
             ],
+            manualOrders : [
+                'Manual Entry',
+                'Client Info',
+                'Order number',
+                'Client name',
+                'Type of ID',
+                'ID number',
+                'Phone number',
+                'Email',
+                'State',
+                'Select a state',
+                'City',
+                'Select a city',
+                'Address',
+                'Type of road',
+                'number',
+                'Type of residence',
+                'Address notes',
+                'Products',
+                'Product name',
+                'Quantity',
+                'Price',
+                'Add product',
+                'Shipment details',
+                'Shipment options',
+                'Select a shipment option',
+                'Simplistics Urban Shipment',
+                'Simplistics Domestic Shipment',
+                'International Shipment',
+                'Pick up in Warehouse',
+                'Requires collection',
+                'Select an option',
+                'No',
+                'Yes',
+                'Send'
+            ],
+            consultOrders : [
+                'Consult Orders',
+                'Export per page',
+                'Export',
+                'Show',
+                'Entries',
+                'Order',
+                'Client',
+                'Integration Date',
+                'State',
+                'Courier',
+                'Guide number'
+            ],
+            importOrders : [
+                'Import',
+                'Select file',
+                'No files selected',
+                'IMPORT ORDERS',
+                'DOWNLOAD TEMPLATES'
+            ],
+            consultInventory : [
+                'Consult Inventory',
+                'Export per page',
+                'Export',
+                'Show',
+                'Entries',
+                'SKU',
+                'Barcode',
+                'Description',
+                'Entry',
+                'Output',
+                'Inventory',
+                'Available',
+                'PSP',
+                'V/D',
+                'Coverage'
+            ],
+            consultPortfolio : [
+                'Consult Portfolio',
+                'Export per page',
+                'Export',
+                'Codes',
+                'Show',
+                'Entries',
+                'Product',
+                'SKU',
+                'EAN/Barcode',
+                'Description',
+                'State'
+            ],
+            manualPortfolio : [
+                'Manual Entry',
+                'Create portfolio',
+                'SKU',
+                'EAN / Barcode',
+                'Description',
+                'Size',
+                'Color',
+                'Upload an image',
+                'Add',
+                'You can upload PNG or JPG images',
+                'Add Product'
+            ],
+            importPortfolio : [
+                'Import Portfolio',
+                'Select file',
+                'No files selected',
+                'IMPORT PORTFOLIO',
+                'DOWNLOAD TEMPLATES'
+            ]
     
         },
         es : {
@@ -83,7 +191,10 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Compras', 
                 'Devoluciones', 
                 'Descargas', 
-                'Configuración', 
+                'Configuración',
+                'Registrar Usuario',
+                'Registrar Cliente',
+                'Estados',
                 'Soporte', 
                 'Luci © 2022 Todos los derechos reservados', 
                 'Desarrollado por Teclab',
@@ -91,7 +202,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Consultar',
                 'Importar'
             ],
-            index : [
+            dashboard : [
                 'Dasboard', 
                 '¡Bienvenido a Luci!', 
                 'Accesos rápidos', 
@@ -112,15 +223,118 @@ window.addEventListener('DOMContentLoaded', event => {
                 'Preparados',
                 'Este mes'
             ],
-    
+            manualOrders : [
+                'Ingreso Manual',
+                'Información del Cliente',
+                'No. Orden',
+                'Nombre del cliente',
+                'Tipo de documento',
+                'No. de documento',
+                'Teléfono',
+                'Correo electrónico',
+                'Departamento',
+                'Seleccione un departamento',
+                'Ciudad',
+                'Seleccione una ciudad',
+                'Dirección',
+                'Tipo de vía',
+                'número',
+                'Tipo de residencia',
+                'Notas de dirección',
+                'Productos',
+                'Nombre de producto',
+                'Cantidad',
+                'Precio (Unitario)',
+                'Agregar Producto',
+                'Detalles del envío',
+                'Opción de envío',
+                'Seleccione una opción de envío',
+                'Domicilios Simplistics Urbano',
+                'Domicilios Simplistics Nacional',
+                'Envío internacional',
+                'Recoger en Bodega',
+                'Requiere recaudo',
+                'Seleccione una opción',
+                'No',
+                'Sí',
+                'Ingresar'
+            ],
+            consultOrders : [
+                'Consultar pedidos',
+                'Exportar por página',
+                'Exportar',
+                'Mostrar',
+                'Entradas',
+                'Pedido',
+                'Cliente',
+                'Fecha integración',
+                'Estado',
+                'Transportadora',
+                'Guía'
+            ],
+            importOrders : [
+                'Importar',
+                'Seleccionar archivo',
+                'Sin archivos seleccionados',
+                'IMPORTAR PEDIDOS',
+                'DESCARGAR PLANTILLAS'
+            ],
+            consultInventory : [
+                'Consultar Inventario',
+                'Exportar por página',
+                'Exportar',
+                'Mostrar',
+                'Entradas',
+                'SKU',
+                'Barcode',
+                'Descripción',
+                'Entradas',
+                'Salidas',
+                'Inventario',
+                'Disponible',
+                'PSP',
+                'V/D',
+                'Cobertura'
+            ],
+            consultPortfolio : [
+                'Consultar Portafolio',
+                'Exportar por página',
+                'Exportar',
+                'Códigos',
+                'Mostrar',
+                'Entradas',
+                'Producto',
+                'SKU',
+                'EAN/Barcode',
+                'Descripción',
+                'Estado'
+            ],
+            manualPortfolio : [
+                'Ingreso Manual',
+                'Crear portafolio',
+                'SKU',
+                'EAN / Barcode',
+                'Descripción',
+                'Talla / Línea',
+                'Color',
+                'Carga una imagen',
+                'Agregar',
+                'Solo puedes adjuntar una imagen PNG o JPG',
+                'Añadir Producto'
+            ],
+            importPortfolio : [
+                'Importar Portafolio',
+                'Seleccionar archivo',
+                'Sin archivos seleccionados',
+                'IMPORTAR PORTAFOLIO',
+                'DESCARGAR PLANTILLAS'
+            ]
         }
     }
     const moduloActual = document.querySelector('body');
     const selIdiomaEs = document.getElementById('es');//Variable idioma español
     const selIdiomaEn = document.getElementById('en');//Variable idioma inglés
     const textChange = document.querySelectorAll('.text-change');
-
-
 
     //Variables de conexión e información del usuario
     const URL = `https://luci-data-api-oun4264ida-uc.a.run.app/User/getUserInfo`;
@@ -129,21 +343,25 @@ window.addEventListener('DOMContentLoaded', event => {
     const userImgProfile = document.getElementById('user-img-profile');
     const userName = document.getElementById('user-name');
 
+    function validarIdiomaPorDefecto(idioma) {
+        if(idioma === 'en') {
+            cambiaIdiomaEn(moduloActual.id);
+        }
+    }
     function cambiaIdioma(e) {
-            let idBoton = e.currentTarget.id;
-            switch (idBoton) {
-                case 'es':
-                    cambiaIdiomaEs();
-                    break;
-                case 'en':
-                    cambiaIdiomaEn(moduloActual.id);
-                    break;
-            }
-
-        
+        let idBoton = e.currentTarget.id;
+        switch (idBoton) {
+            case 'es':
+                cambiaIdiomaEs();
+                break;
+            case 'en':
+                cambiaIdiomaEn(moduloActual.id);
+                break;
+        }
     }
 
     function cambiaIdiomaEs() {
+        localStorage.setItem('idioma', 'es');
         location.reload();
     }
 
@@ -172,6 +390,8 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
             });
         });
+
+        localStorage.setItem('idioma', 'en');
 
 
     }
@@ -232,6 +452,7 @@ window.addEventListener('DOMContentLoaded', event => {
         userName.textContent = localStorage.getItem('username');
         userImgProfile.setAttribute('src', localStorage.getItem('imgUrl'));
     }
+    validarIdiomaPorDefecto( localStorage.getItem('idioma') );
     selIdiomaEn.addEventListener('click', cambiaIdioma);
     selIdiomaEs.addEventListener('click', cambiaIdioma);
 });
