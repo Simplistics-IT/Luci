@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     includeHTML();
     */
+
     //Cambio de idioma
     const traduccion = {
         en : {
@@ -366,7 +367,6 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     function cambiaIdiomaEn(pagina) {
-
         traduccion.es.sidebar.map((elemento, index) => {
             textChange.forEach( texto => {
                 if(texto.textContent === elemento) {
